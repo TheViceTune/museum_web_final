@@ -13,11 +13,8 @@
           :style="{ backgroundImage: `url(${slide.image})` }"
         ></div>
 
-        <!-- Left blurred overlay (pseudo‑element) -->
-        <div
-          class="hero-overlay-left"
-          :style="{ '--slide-bg': `url(${slide.image})` }"
-        >
+        <!-- Left overlay with backdrop-filter (blurs the image behind it) -->
+        <div class="hero-overlay-left">
           <div class="hero-text">
             <span class="hero-badge">✦ {{ slide.badge }}</span>
             <h1>{{ slide.title }}</h1>
@@ -158,7 +155,7 @@ onUnmounted(() => {
   z-index: 0;
 }
 
-/* ---------- Left blurred overlay (pseudo‑element) ---------- */
+/* ✅ Left overlay – uses backdrop-filter to blur the image behind it (no duplication!) */
 .hero-overlay-left {
   position: relative;
   z-index: 1;
@@ -168,22 +165,18 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  /* Semi‑transparent background for readability */
-  background: rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-/* Pseudo‑element creates the blurred copy of the background image */
-.hero-overlay-left::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: var(--slide-bg);
-  background-size: cover;
-  background-position: center;
-  filter: blur(12px);
-  transform: scale(1.05); /* hide blur edges */
+  /* Dark background for readability + backdrop-filter blurs the image behind */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Gradual fade at the right edge for a smooth transition */
+  mask-image: linear-gradient(to right, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
 }
 
 .hero-text {
@@ -272,6 +265,8 @@ onUnmounted(() => {
   .hero-overlay-left {
     width: 70%;
     padding: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .hero-text h1 {
     font-size: 2.2rem;
@@ -287,7 +282,10 @@ onUnmounted(() => {
 @media (max-width: 480px) {
   .hero-overlay-left {
     width: 100%;
-    padding: 20px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    mask-image: none;
+    -webkit-mask-image: none;
   }
   .hero-text h1 {
     font-size: 1.8rem;
