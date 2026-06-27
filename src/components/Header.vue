@@ -1,17 +1,17 @@
 <template>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo-area">
-        <div class="logo-placeholder">P</div>
-        <div class="logo-text">
-          Bảo tàng Phòng không - Không quân
-          <small>Air Defense - Air Force Museum</small>
-        </div>
-      </div>
+      <router-link to="/" class="logo-area">
+        <img
+          src="/logo.png"
+          alt="Bảo tàng Phòng không - Không quân"
+          class="logo-image"
+        />
+        <div class="logo-text">BẢO TÀNG PHÒNG KHÔNG - KHÔNG QUÂN</div>
+      </router-link>
       <nav class="main-nav">
         <router-link to="/">Trang chủ</router-link>
 
-        <!-- Explore dropdown -->
         <div
           class="dropdown"
           @mouseenter="openExplore"
@@ -26,7 +26,6 @@
           </div>
         </div>
 
-        <!-- Experience dropdown -->
         <div
           class="dropdown"
           @mouseenter="openExperience"
@@ -70,7 +69,6 @@ function closeExperience() {
 </script>
 
 <style scoped>
-/* Existing styles unchanged, add dropdown styles */
 .site-header {
   background: var(--primary-dark);
   color: var(--white);
@@ -88,23 +86,19 @@ function closeExperience() {
   flex-wrap: wrap;
   gap: 12px;
 }
+
 .logo-area {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
-.logo-placeholder {
-  width: 48px;
+.logo-image {
   height: 48px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--primary-dark);
-  flex-shrink: 0;
+  width: auto;
+  display: block;
 }
 .logo-text {
   font-weight: 700;
@@ -117,6 +111,7 @@ function closeExperience() {
   font-size: 12px;
   opacity: 0.8;
 }
+
 .main-nav {
   display: flex;
   gap: 6px;
@@ -132,6 +127,9 @@ function closeExperience() {
   border: 1px solid transparent;
   text-decoration: none;
   color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .main-nav a:hover,
 .main-nav a.router-link-active {
@@ -139,6 +137,7 @@ function closeExperience() {
   color: var(--primary-dark);
   border-color: var(--gold);
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -161,14 +160,18 @@ function closeExperience() {
   display: block;
   padding: 8px 20px;
   color: var(--primary-dark);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   border: none;
   border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 .dropdown-menu a:hover {
   background: var(--cream);
 }
+
 @media (max-width: 768px) {
   .header-inner {
     flex-direction: column;
@@ -178,17 +181,28 @@ function closeExperience() {
     justify-content: center;
   }
   .main-nav a {
-    font-size: 13px;
-    padding: 6px 12px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .dropdown-menu a {
+    font-size: 12px;
+    padding: 6px 16px;
   }
 }
 @media (max-width: 480px) {
   .main-nav a {
-    font-size: 12px;
-    padding: 4px 10px;
+    font-size: 11px;
+    padding: 4px 8px;
   }
   .logo-text {
     font-size: 15px;
+  }
+  .logo-image {
+    height: 36px;
+  }
+  .dropdown-menu a {
+    font-size: 11px;
+    padding: 4px 12px;
   }
 }
 </style>

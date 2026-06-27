@@ -1,58 +1,99 @@
 <template>
-  <div class="container page">
-    <h1 class="page-title" v-slide-in:left>Trải nghiệm</h1>
-    <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
-      Khám phá những góc nhìn đa dạng về bảo tàng qua các hoạt động tương tác.
-    </p>
+  <div class="experience-home-page">
+    <!-- Full‑page background -->
+    <div class="page-bg"></div>
+    <div class="page-overlay"></div>
 
-    <div class="experience-cards" v-slide-in:bottom>
-      <router-link to="/trai-nghiem/genz" class="exp-card">
-        <div
-          class="exp-card-bg"
-          style="
-            background-image: url(&quot;/museum_photos/Bìa ảnh sections/Góc nhìn Gen Z.png&quot;);
-          "
-        ></div>
-        <div class="exp-card-overlay"></div>
-        <div class="exp-card-content">
-          <h3>Góc nhìn GenZ</h3>
-          <p>
-            Lắng nghe những cảm nghĩ và tâm sự của các bạn trẻ sau khi tham quan
-            Bảo tàng Phòng không - Không quân!
-          </p>
-          <span class="btn-gold">KHÁM PHÁ →</span>
-        </div>
-      </router-link>
+    <!-- Content -->
+    <div class="container page">
+      <h1 class="page-title" v-slide-in:left>Trải nghiệm</h1>
+      <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
+        Khám phá những góc nhìn đa dạng về bảo tàng qua các hoạt động tương tác.
+      </p>
 
-      <router-link to="/trai-nghiem/puzzle" class="exp-card">
-        <div
-          class="exp-card-bg"
-          style="
-            background-image: url(&quot;/museum_photos/Bìa ảnh sections/Truy tìm mảnh ghép.png&quot;);
-          "
-        ></div>
-        <div class="exp-card-overlay"></div>
-        <div class="exp-card-content">
-          <h3>Truy tìm mảnh ghép</h3>
-          <p>
-            Hãy thử thách bản thân với những câu hỏi thú vị về quân chủng Phòng
-            không - Không quân để học hỏi thêm nhiều kiến thức mới nhé!
-          </p>
-          <span class="btn-gold">KHÁM PHÁ →</span>
-        </div>
-      </router-link>
+      <div class="experience-cards" v-slide-in:bottom>
+        <router-link to="/trai-nghiem/genz" class="exp-card">
+          <div
+            class="exp-card-bg"
+            style="
+              background-image: url(&quot;/museum_photos/Bìa ảnh sections/Góc nhìn Gen Z.png&quot;);
+            "
+          ></div>
+          <div class="exp-card-overlay"></div>
+          <div class="exp-card-content">
+            <h3>Góc nhìn GenZ</h3>
+            <p>
+              Lắng nghe những cảm nghĩ và tâm sự của các bạn trẻ sau khi tham
+              quan Bảo tàng Phòng không - Không quân!
+            </p>
+            <span class="btn-gold">KHÁM PHÁ →</span>
+          </div>
+        </router-link>
+
+        <router-link to="/trai-nghiem/puzzle" class="exp-card">
+          <div
+            class="exp-card-bg"
+            style="
+              background-image: url(&quot;/museum_photos/Bìa ảnh sections/Truy tìm mảnh ghép.png&quot;);
+            "
+          ></div>
+          <div class="exp-card-overlay"></div>
+          <div class="exp-card-content">
+            <h3>Truy tìm mảnh ghép</h3>
+            <p>
+              Hãy thử thách bản thân với những câu hỏi thú vị về quân chủng
+              Phòng không - Không quân để học hỏi thêm nhiều kiến thức mới nhé!
+            </p>
+            <span class="btn-gold">KHÁM PHÁ →</span>
+          </div>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Full‑page background */
+.experience-home-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("/museum_photos/experience/nền.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px) brightness(0.7);
+  transform: scale(1.05);
+}
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.container.page {
+  position: relative;
+  z-index: 1;
+}
+
+/* Existing card styles (unchanged) */
 .experience-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   margin-top: 40px;
 }
-
 .exp-card {
   position: relative;
   border-radius: var(--radius);
@@ -74,8 +115,6 @@
   background-size: cover;
   background-position: center;
 }
-
-/* ✅ REVERSED GRADIENT – top clear, bottom dark */
 .exp-card-overlay {
   position: absolute;
   inset: 0;
@@ -86,7 +125,6 @@
     rgba(0, 0, 0, 0.7) 100%
   );
 }
-
 .exp-card-content {
   position: relative;
   z-index: 2;
@@ -122,7 +160,6 @@
 .exp-card-content .btn-gold:hover {
   background: var(--gold-light);
 }
-
 @media (max-width: 900px) {
   .experience-cards {
     grid-template-columns: 1fr 1fr;

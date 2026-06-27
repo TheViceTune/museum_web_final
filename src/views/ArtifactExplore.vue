@@ -1,56 +1,63 @@
 <template>
-  <div class="container page">
-    <h1 class="page-title" v-slide-in:left>Dòng chảy hiện vật</h1>
-    <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
-      Khám phá hành trình phát triển của lực lượng Phòng không - Không quân Việt
-      Nam qua những hiện vật tiêu biểu của từng thời kỳ lịch sử.
-    </p>
+  <div class="artifact-page">
+    <!-- Fixed background -->
+    <div class="page-bg"></div>
+    <div class="page-overlay"></div>
 
-    <!-- Audio floating -->
-    <div class="audio-float">
-      <audio ref="audioRef" controls loop>
-        <source :src="noiseAudio" type="audio/mpeg" />
-      </audio>
-    </div>
+    <!-- Content -->
+    <div class="page-content container">
+      <h1 class="page-title" v-slide-in:left>Dòng chảy hiện vật</h1>
+      <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
+        Khám phá hành trình phát triển của lực lượng Phòng không - Không quân
+        Việt Nam qua những hiện vật tiêu biểu của từng thời kỳ lịch sử.
+      </p>
 
-    <Timeline v-model="currentPeriod" v-slide-in:bottom="{ delay: 100 }" />
-
-    <div class="carousel-wrapper" v-slide-in:bottom="{ delay: 200 }">
-      <button
-        class="arrow-btn left"
-        @click="prevExhibit"
-        :disabled="exhibitIndex === 0"
-      >
-        ‹
-      </button>
-      <div class="carousel-content">
-        <transition name="slide" mode="out-in">
-          <div :key="currentExhibit.id" class="carousel-item">
-            <div class="explore-layout">
-              <ArtifactDisplay :exhibit="currentExhibit" />
-              <InfoPanel :exhibit="currentExhibit" />
-            </div>
-          </div>
-        </transition>
+      <!-- Audio floating -->
+      <div class="audio-float">
+        <audio ref="audioRef" controls loop>
+          <source :src="noiseAudio" type="audio/mpeg" />
+        </audio>
       </div>
-      <button
-        class="arrow-btn right"
-        @click="nextExhibit"
-        :disabled="exhibitIndex === exhibitsInPeriod.length - 1"
-      >
-        ›
-      </button>
-    </div>
 
-    <div class="exhibit-counter" v-slide-in:bottom="{ delay: 300 }">
-      {{ exhibitIndex + 1 }} / {{ exhibitsInPeriod.length }}
-    </div>
+      <Timeline v-model="currentPeriod" v-slide-in:bottom="{ delay: 100 }" />
 
-    <!-- Back to Explore Home -->
-    <div style="text-align: center; margin-top: 20px">
-      <router-link to="/kham-pha" class="btn-outline"
-        >← Quay lại trang chính</router-link
-      >
+      <div class="carousel-wrapper" v-slide-in:bottom="{ delay: 200 }">
+        <button
+          class="arrow-btn left"
+          @click="prevExhibit"
+          :disabled="exhibitIndex === 0"
+        >
+          ‹
+        </button>
+        <div class="carousel-content">
+          <transition name="slide" mode="out-in">
+            <div :key="currentExhibit.id" class="carousel-item">
+              <div class="explore-layout">
+                <ArtifactDisplay :exhibit="currentExhibit" />
+                <InfoPanel :exhibit="currentExhibit" />
+              </div>
+            </div>
+          </transition>
+        </div>
+        <button
+          class="arrow-btn right"
+          @click="nextExhibit"
+          :disabled="exhibitIndex === exhibitsInPeriod.length - 1"
+        >
+          ›
+        </button>
+      </div>
+
+      <div class="exhibit-counter" v-slide-in:bottom="{ delay: 300 }">
+        {{ exhibitIndex + 1 }} / {{ exhibitsInPeriod.length }}
+      </div>
+
+      <!-- Back to Explore Home -->
+      <div style="text-align: center; margin-top: 20px">
+        <router-link to="/kham-pha" class="btn-outline"
+          >← Quay lại trang chính</router-link
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -108,7 +115,61 @@ function prevExhibit() {
 </script>
 
 <style scoped>
-/* All styles from the original Explore.vue (unchanged) */
+.artifact-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Fixed background – same as ExploreHome */
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("/museum_photos/Trang tham quan/Nền.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px) brightness(0.7);
+  transform: scale(1.05);
+}
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 0 20px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+  font-family: var(--font-title);
+}
+.page-subtitle {
+  color: var(--white);
+  opacity: 0.9;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* All styles from the original ArtifactExplore.vue (unchanged except added bg) */
 .explore-layout {
   display: grid;
   grid-template-columns: 1fr 360px;

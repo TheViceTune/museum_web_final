@@ -1,29 +1,31 @@
 <template>
   <section class="hero">
-    <div
-      class="hero-slide"
-      v-for="(slide, index) in slides"
-      :key="index"
-      v-show="currentIndex === index"
-    >
-      <!-- Background image (full width) -->
+    <div class="slides-container">
       <div
-        class="hero-bg"
-        :style="{ backgroundImage: `url(${slide.image})` }"
-      ></div>
-      <!-- Left overlay with blur and semi-transparent background -->
-      <div class="hero-overlay-left">
-        <div class="hero-text">
-          <span class="hero-badge">✦ {{ slide.badge }}</span>
-          <h1>{{ slide.title }}</h1>
-          <p>{{ slide.description }}</p>
-          <router-link to="/kham-pha" class="btn-gold hero-btn">{{
-            slide.cta
-          }}</router-link>
+        v-for="(slide, index) in slides"
+        :key="index"
+        class="hero-slide"
+        :class="{ active: currentIndex === index }"
+      >
+        <!-- Background image (full width) -->
+        <div
+          class="hero-bg"
+          :style="{ backgroundImage: `url(${slide.image})` }"
+        ></div>
+        <!-- Left overlay with blur and gradient -->
+        <div class="hero-overlay-left">
+          <div class="hero-text">
+            <span class="hero-badge">✦ {{ slide.badge }}</span>
+            <h1>{{ slide.title }}</h1>
+            <p>{{ slide.description }}</p>
+            <router-link to="/kham-pha" class="btn-gold hero-btn">{{
+              slide.cta
+            }}</router-link>
+          </div>
         </div>
       </div>
-      <!-- Clear right side (no overlay) – remains visible -->
     </div>
+
     <!-- Dots -->
     <div class="hero-dots">
       <span
@@ -40,6 +42,17 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
+// Helper to encode file paths with spaces and Vietnamese characters
+const encodePath = (path) => {
+  if (!path) return "";
+  const parts = path.split("/");
+  // Encode each part except the leading empty string (if any)
+  const encoded = parts
+    .map((part, i) => (i === 0 ? part : encodeURIComponent(part)))
+    .join("/");
+  return encoded;
+};
+
 const slides = [
   {
     badge: "Bảo tàng Phòng không - Không quân",
@@ -47,7 +60,7 @@ const slides = [
     description:
       "Tái hiện những câu chuyện, hiện vật và ký ức của lực lượng Phòng không - Không quân Việt Nam trên hành trình bảo vệ Tổ Quốc",
     cta: "KHÁM PHÁ",
-    image: "https://via.placeholder.com/1920x800/195484/ffffff?text=Slide+1",
+    image: encodePath("/museum_photos/home/1.JPG"),
   },
   {
     badge: "Chiến công oanh liệt",
@@ -55,7 +68,7 @@ const slides = [
     description:
       "Những chiến tích vang dội của lực lượng phòng không trong cuộc kháng chiến chống Mỹ cứu nước.",
     cta: "KHÁM PHÁ",
-    image: "https://via.placeholder.com/1920x800/195484/ffffff?text=Slide+2",
+    image: encodePath("/museum_photos/home/2.jpeg"),
   },
   {
     badge: "Phi công huyền thoại",
@@ -63,7 +76,7 @@ const slides = [
     description:
       "Những người con anh dũng đã làm nên lịch sử trên bầu trời Việt Nam.",
     cta: "KHÁM PHÁ",
-    image: "https://via.placeholder.com/1920x800/195484/ffffff?text=Slide+3",
+    image: encodePath("/museum_photos/home/3.jpeg"),
   },
   {
     badge: "Hiện vật lịch sử",
@@ -71,7 +84,7 @@ const slides = [
     description:
       "Mỗi hiện vật là một câu chuyện, mỗi câu chuyện là một bài học về lòng yêu nước.",
     cta: "KHÁM PHÁ",
-    image: "https://via.placeholder.com/1920x800/195484/ffffff?text=Slide+4",
+    image: encodePath("/museum_photos/home/4.jpeg"),
   },
 ];
 
@@ -114,11 +127,24 @@ onUnmounted(() => {
   margin-bottom: 20px;
 }
 
+.slides-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-slide {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .hero-bg {
@@ -129,7 +155,7 @@ onUnmounted(() => {
   z-index: 0;
 }
 
-/* Left overlay: covers left 50% with blur and gradient */
+/* Left overlay: exactly 50% width, with blur fading to clear */
 .hero-overlay-left {
   position: relative;
   z-index: 1;
@@ -141,11 +167,19 @@ onUnmounted(() => {
   padding: 40px;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.1) 80%,
     rgba(0, 0, 0, 0) 100%
   );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to right, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
 }
 
 .hero-text {
@@ -205,7 +239,7 @@ onUnmounted(() => {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  z-index: 10;
   display: flex;
   gap: 12px;
 }
@@ -218,7 +252,6 @@ onUnmounted(() => {
   cursor: pointer;
   transition: var(--transition);
 }
-
 .hero-dots .dot.active {
   background: var(--gold);
   width: 30px;
@@ -234,6 +267,8 @@ onUnmounted(() => {
   .hero-overlay-left {
     width: 70%;
     padding: 20px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
   .hero-text h1 {
     font-size: 2.2rem;
@@ -251,8 +286,10 @@ onUnmounted(() => {
   .hero-overlay-left {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    mask-image: none;
+    -webkit-mask-image: none;
   }
   .hero-text h1 {
     font-size: 1.8rem;

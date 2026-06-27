@@ -3,7 +3,7 @@
     <HomeHero v-slide-in:left />
 
     <div class="container">
-      <VideoPlaceholder v-slide-in:bottom />
+      <VideoPlayer v-slide-in:bottom />
       <Disclaimer v-slide-in:bottom="{ delay: 150 }" />
 
       <div class="quick-links">
@@ -36,7 +36,7 @@
 
 <script setup>
 import HomeHero from "@/components/HomeHero.vue";
-import VideoPlaceholder from "@/components/VideoPlaceholder.vue";
+import VideoPlayer from "@/components/VideoPlayer.vue";
 import Disclaimer from "@/components/Disclaimer.vue";
 </script>
 

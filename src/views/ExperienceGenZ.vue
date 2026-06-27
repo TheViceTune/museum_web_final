@@ -1,104 +1,111 @@
 <template>
-  <div class="container page">
-    <h1 class="page-title" v-slide-in:left>Góc nhìn GenZ</h1>
-    <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
-      Lắng nghe những cảm nghĩ và tâm sự của các bạn trẻ sau khi tham quan Bảo
-      tàng Phòng không - Không quân!
-    </p>
+  <div class="experience-genz-page">
+    <!-- Full‑page background -->
+    <div class="page-bg"></div>
+    <div class="page-overlay"></div>
 
-    <!-- Reviews -->
-    <div class="genz-grid" v-slide-in:bottom>
-      <GenZCard
-        v-for="(item, idx) in genzList"
-        :key="idx"
-        :name="item.name"
-        :age="item.age"
-        :school="item.school"
-        :quote="item.quote"
-        :photo="item.photo"
-        v-slide-in:bottom="{ delay: idx * 80 }"
-      />
-    </div>
+    <!-- Content -->
+    <div class="container page">
+      <h1 class="page-title" v-slide-in:left>Góc nhìn GenZ</h1>
+      <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
+        Lắng nghe những cảm nghĩ và tâm sự của các bạn trẻ sau khi tham quan Bảo
+        tàng Phòng không - Không quân!
+      </p>
 
-    <!-- Feedback CTA -->
-    <div class="feedback-cta" v-slide-in:bottom>
-      <p>Chia sẻ thêm với chúng mình tại đây!</p>
-      <button class="btn-gold" @click="openFeedbackForm">
-        📝 Gửi phản hồi
-      </button>
-    </div>
-
-    <!-- Check-in composite photo section -->
-    <div class="checkin-composite" v-slide-in:bottom="{ delay: 200 }">
-      <h2 class="gallery-title">NHỮNG GÓC CHECK IN TẠI BẢO TÀNG</h2>
-      <div class="composite-wrapper">
-        <img
-          :src="compositePhoto"
-          alt="Check-in composite"
-          class="composite-image"
+      <!-- Reviews -->
+      <div class="genz-grid" v-slide-in:bottom>
+        <GenZCard
+          v-for="(item, idx) in genzList"
+          :key="idx"
+          :name="item.name"
+          :age="item.age"
+          :school="item.school"
+          :quote="item.quote"
+          :photo="item.photo"
+          v-slide-in:bottom="{ delay: idx * 80 }"
         />
       </div>
-      <div class="gallery-share">
-        <span>Chia sẻ thêm với chúng mình tại đây!</span>
-        <button class="btn-gold" @click="shareCheckin">📸 Chia sẻ ảnh</button>
+
+      <!-- Feedback CTA -->
+      <div class="feedback-cta" v-slide-in:bottom>
+        <p>Chia sẻ thêm với chúng mình tại đây!</p>
+        <button class="btn-gold" @click="openFeedbackForm">
+          📝 Gửi phản hồi
+        </button>
       </div>
-    </div>
 
-    <!-- Back button -->
-    <div style="text-align: center; margin-top: 30px">
-      <router-link to="/trai-nghiem" class="btn-outline"
-        >← Quay lại trang chính</router-link
+      <!-- Check-in composite photo section -->
+      <div class="checkin-composite" v-slide-in:bottom="{ delay: 200 }">
+        <h2 class="gallery-title">NHỮNG GÓC CHECK IN TẠI BẢO TÀNG</h2>
+        <div class="composite-wrapper">
+          <img
+            :src="compositePhoto"
+            alt="Check-in composite"
+            class="composite-image"
+          />
+        </div>
+        <div class="gallery-share">
+          <span>Chia sẻ thêm với chúng mình tại đây!</span>
+          <button class="btn-gold" @click="shareCheckin">📸 Chia sẻ ảnh</button>
+        </div>
+      </div>
+
+      <!-- Back button -->
+      <div style="text-align: center; margin-top: 30px">
+        <router-link to="/trai-nghiem" class="btn-outline"
+          >← Quay lại trang chính</router-link
+        >
+      </div>
+
+      <!-- Feedback Modal -->
+      <div
+        v-if="feedbackModalVisible"
+        class="modal-overlay"
+        @click.self="closeFeedbackModal"
       >
-    </div>
-
-    <!-- Feedback Modal -->
-    <div
-      v-if="feedbackModalVisible"
-      class="modal-overlay"
-      @click.self="closeFeedbackModal"
-    >
-      <div class="modal-content">
-        <button class="close-btn" @click="closeFeedbackModal">✕</button>
-        <h2>Chia sẻ cảm nhận của bạn</h2>
-        <form @submit.prevent="submitFeedback">
-          <div class="form-group">
-            <label>Tên của bạn</label>
-            <input
-              type="text"
-              v-model="feedbackName"
-              placeholder="Nhập tên..."
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label>Tuổi</label>
-            <input
-              type="number"
-              v-model="feedbackAge"
-              placeholder="Nhập tuổi..."
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label>Trường / Nơi làm việc</label>
-            <input
-              type="text"
-              v-model="feedbackSchool"
-              placeholder="Nhập thông tin..."
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label>Cảm nhận của bạn</label>
-            <textarea
-              v-model="feedbackMessage"
-              rows="4"
-              placeholder="Chia sẻ cảm nghĩ của bạn về bảo tàng..."
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn-primary">Gửi phản hồi</button>
-        </form>
+        <div class="modal-content">
+          <button class="close-btn" @click="closeFeedbackModal">✕</button>
+          <h2>Chia sẻ cảm nhận của bạn</h2>
+          <form @submit.prevent="submitFeedback">
+            <div class="form-group">
+              <label>Tên của bạn</label>
+              <input
+                type="text"
+                v-model="feedbackName"
+                placeholder="Nhập tên..."
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Tuổi</label>
+              <input
+                type="number"
+                v-model="feedbackAge"
+                placeholder="Nhập tuổi..."
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Trường / Nơi làm việc</label>
+              <input
+                type="text"
+                v-model="feedbackSchool"
+                placeholder="Nhập thông tin..."
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Cảm nhận của bạn</label>
+              <textarea
+                v-model="feedbackMessage"
+                rows="4"
+                placeholder="Chia sẻ cảm nghĩ của bạn về bảo tàng..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Gửi phản hồi</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -111,9 +118,7 @@ import GenZCard from "@/components/GenZCard.vue";
 // Helper to encode Vietnamese paths for safety
 const encodePath = (path) => {
   if (!path) return "";
-  // If it's a full URL (starts with http), return as is
   if (path.startsWith("http")) return path;
-  // Otherwise, encode the path after the last slash
   const parts = path.split("/");
   const last = parts.length - 1;
   parts[last] = encodeURIComponent(parts[last]);
@@ -127,9 +132,7 @@ const genzList = [
     school: "ĐH Ngoại Thương",
     quote:
       "“Đây là lần đầu tiên mình đi Bảo tàng, và ấn tượng lớn nhất đó chính là những khẩu pháo và phi cơ to khổng lồ, nhiều câu chuyện lịch sử về Phòng không - Không quân cũng khiến mình biết ơn hơn về những công ơn của những thế hệ đi trước.”",
-    photo: encodePath(
-      "/museum_photos/Trang trải nghiệm/Các bạn trẻ nghĩ gì/Trần Hà My.png",
-    ),
+    photo: encodePath("/museum_photos/experience/thoughts/Trần Hà My.png"),
   },
   {
     name: "Nguyễn Minh Nga",
@@ -137,9 +140,7 @@ const genzList = [
     school: "ĐH Kinh tế Quốc dân",
     quote:
       "“Ngày mình tham quan bảo tàng cũng là một ngày nắng đẹp, do đó mình vô cùng háo hức. Mình thấy việc bảo tàng dành nguyên tầng 2 cho trận Điện Biên Phủ trên không vô cùng ý nghĩa vì đó là chiến tích lớn nhất của quân chủng Phòng không - Không quân.”",
-    photo: encodePath(
-      "/museum_photos/Trang trải nghiệm/Các bạn trẻ nghĩ gì/Nguyễn Minh Nga.png",
-    ),
+    photo: encodePath("/museum_photos/experience/thoughts/Nguyễn Minh Nga.png"),
   },
   {
     name: "Nguyễn Văn Anh",
@@ -155,9 +156,7 @@ const genzList = [
     school: "Sinh viên",
     quote:
       "“Không nghĩ một bảo tàng quân sự ở Hà Nội lại cuốn vậy luôn. Đi xong cảm giác vừa chill vừa học được nhiều thứ.”",
-    photo: encodePath(
-      "/museum_photos/Trang trải nghiệm/Các bạn trẻ nghĩ gì/Trần Mai Hiên.png",
-    ),
+    photo: encodePath("/museum_photos/experience/thoughts/Trần Mai Hiên.png"),
   },
   {
     name: "Lê Văn Cường",
@@ -165,9 +164,7 @@ const genzList = [
     school: "ĐH Quốc gia Hà Nội",
     quote:
       "“Có những khoảnh khắc đứng dưới máy bay thật sự thấy choáng ngợp. Tự nhiên hiểu hơn về một giai đoạn lịch sử.”",
-    photo: encodePath(
-      "/museum_photos/Trang trải nghiệm/Các bạn trẻ nghĩ gì/Lê Việt Anh.png",
-    ),
+    photo: encodePath("/museum_photos/experience/thoughts/Lê Việt Anh.png"),
   },
   {
     name: "Phạm Thị Dung",
@@ -176,16 +173,13 @@ const genzList = [
     quote:
       "“Mình thấy việc bảo tàng tổ chức các trò chơi tương tác rất hay, giúp giới trẻ tiếp cận lịch sử một cách nhẹ nhàng và dễ nhớ hơn.”",
     photo: encodePath(
-      "/museum_photos/Trang trải nghiệm/Các bạn trẻ nghĩ gì/Trịnh Gia Thanh Vân.png",
+      "/museum_photos/experience/thoughts/trinh-gia-thanh-van.png",
     ),
   },
 ];
 
-// Composite photo (replace with your own link)
-const compositePhoto =
-  "/museum_photos/Trang trải nghiệm/Góc check-in/Ảnh tất cả.png";
+const compositePhoto = "/museum_photos/experience/Góc check-in/Ảnh tất cả.png";
 
-// Feedback modal
 const feedbackModalVisible = ref(false);
 const feedbackName = ref("");
 const feedbackAge = ref("");
@@ -215,9 +209,48 @@ function shareCheckin() {
 </script>
 
 <style scoped>
+.experience-genz-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("/museum_photos/experience/nền.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px) brightness(0.7);
+  transform: scale(1.05);
+}
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.container.page {
+  position: relative;
+  z-index: 1;
+}
+
 /* Page title larger */
 .page-title {
   font-size: 42px !important;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+.page-subtitle {
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 768px) {
   .page-title {
@@ -225,12 +258,26 @@ function shareCheckin() {
   }
 }
 
-/* Reviews grid */
+/* ✅ Updated grid: 3 columns on desktop (2 rows of 3) */
 .genz-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin: 20px 0;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .genz-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .genz-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Feedback CTA */
@@ -238,7 +285,8 @@ function shareCheckin() {
   text-align: center;
   margin: 30px 0 20px;
   padding: 16px;
-  background: var(--cream);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
   border-radius: var(--radius);
   border: 2px dashed var(--gold);
 }
@@ -263,17 +311,17 @@ function shareCheckin() {
   background: var(--gold-light);
 }
 
-/* Composite photo section – transparent, no borders */
+/* Composite photo section */
 .checkin-composite {
   margin-top: 40px;
   padding-top: 30px;
   border-top: 2px solid var(--gold);
 }
-
 .gallery-title {
   font-family: var(--font-title);
   font-size: 32px;
-  color: var(--primary-dark);
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   text-align: center;
   margin-bottom: 24px;
   letter-spacing: 1px;
@@ -283,7 +331,6 @@ function shareCheckin() {
     font-size: 24px;
   }
 }
-
 .composite-wrapper {
   background: transparent;
   border: none;
@@ -295,7 +342,6 @@ function shareCheckin() {
   width: 100%;
   box-shadow: none;
 }
-
 .composite-image {
   width: 100%;
   height: auto;
@@ -305,12 +351,12 @@ function shareCheckin() {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-
 .gallery-share {
   text-align: center;
   margin-top: 16px;
   font-size: 16px;
-  color: var(--text-light);
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .gallery-share .btn-gold {
   display: inline-block;
@@ -414,8 +460,6 @@ function shareCheckin() {
 .btn-primary:hover {
   background: var(--primary);
 }
-
-/* Responsive */
 @media (max-width: 768px) {
   .composite-image {
     max-height: 60vh;
