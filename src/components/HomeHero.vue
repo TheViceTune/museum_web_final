@@ -7,14 +7,17 @@
         class="hero-slide"
         :class="{ active: currentIndex === index }"
       >
-        <!-- Background image (full width) -->
+        <!-- Full‑width background image -->
         <div
           class="hero-bg"
           :style="{ backgroundImage: `url(${slide.image})` }"
         ></div>
 
-        <!-- Left blurred overlay (using pseudo-element) -->
-        <div class="hero-overlay-left">
+        <!-- Left blurred overlay (pseudo‑element) -->
+        <div
+          class="hero-overlay-left"
+          :style="{ '--slide-bg': `url(${slide.image})` }"
+        >
           <div class="hero-text">
             <span class="hero-badge">✦ {{ slide.badge }}</span>
             <h1>{{ slide.title }}</h1>
@@ -155,7 +158,7 @@ onUnmounted(() => {
   z-index: 0;
 }
 
-/* ✅ Left blurred overlay – using pseudo-element for reliable blur */
+/* ---------- Left blurred overlay (pseudo‑element) ---------- */
 .hero-overlay-left {
   position: relative;
   z-index: 1;
@@ -165,31 +168,22 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  /* Semi-transparent background to enhance readability */
+  /* Semi‑transparent background for readability */
   background: rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
-/* Pseudo-element that takes the same background image and blurs it */
+/* Pseudo‑element creates the blurred copy of the background image */
 .hero-overlay-left::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: inherit; /* inherits from parent – we'll set it dynamically */
+  background-image: var(--slide-bg);
   background-size: cover;
   background-position: center;
-  filter: blur(10px);
+  filter: blur(12px);
   transform: scale(1.05); /* hide blur edges */
-  /* We'll set the background image via inline style on the parent */
-}
-
-/* Set the background image for the pseudo-element via a data attribute or inline style */
-.hero-overlay-left {
-  background-image: var(--slide-bg);
-}
-.hero-overlay-left::before {
-  background-image: var(--slide-bg);
 }
 
 .hero-text {
