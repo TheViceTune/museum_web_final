@@ -12,7 +12,8 @@
           class="hero-bg"
           :style="{ backgroundImage: `url(${slide.image})` }"
         ></div>
-        <!-- Left overlay with blur and gradient -->
+
+        <!-- Left blurred overlay (using pseudo-element) -->
         <div class="hero-overlay-left">
           <div class="hero-text">
             <span class="hero-badge">✦ {{ slide.badge }}</span>
@@ -46,7 +47,6 @@ import { ref, onMounted, onUnmounted } from "vue";
 const encodePath = (path) => {
   if (!path) return "";
   const parts = path.split("/");
-  // Encode each part except the leading empty string (if any)
   const encoded = parts
     .map((part, i) => (i === 0 ? part : encodeURIComponent(part)))
     .join("/");
@@ -155,7 +155,7 @@ onUnmounted(() => {
   z-index: 0;
 }
 
-/* Left overlay: exactly 50% width, with blur fading to clear */
+/* ✅ Left blurred overlay – using pseudo-element for reliable blur */
 .hero-overlay-left {
   position: relative;
   z-index: 1;
@@ -165,27 +165,39 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.1) 80%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  mask-image: linear-gradient(to right, black 0%, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    black 0%,
-    black 70%,
-    transparent 100%
-  );
+  /* Semi-transparent background to enhance readability */
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Pseudo-element that takes the same background image and blurs it */
+.hero-overlay-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: inherit; /* inherits from parent – we'll set it dynamically */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  transform: scale(1.05); /* hide blur edges */
+  /* We'll set the background image via inline style on the parent */
+}
+
+/* Set the background image for the pseudo-element via a data attribute or inline style */
+.hero-overlay-left {
+  background-image: var(--slide-bg);
+}
+.hero-overlay-left::before {
+  background-image: var(--slide-bg);
 }
 
 .hero-text {
   max-width: 500px;
   color: var(--white);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-badge {
@@ -243,7 +255,6 @@ onUnmounted(() => {
   display: flex;
   gap: 12px;
 }
-
 .hero-dots .dot {
   width: 12px;
   height: 12px;
@@ -267,8 +278,6 @@ onUnmounted(() => {
   .hero-overlay-left {
     width: 70%;
     padding: 20px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
   }
   .hero-text h1 {
     font-size: 2.2rem;
@@ -281,15 +290,10 @@ onUnmounted(() => {
     font-size: 12px;
   }
 }
-
 @media (max-width: 480px) {
   .hero-overlay-left {
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    mask-image: none;
-    -webkit-mask-image: none;
+    padding: 20px;
   }
   .hero-text h1 {
     font-size: 1.8rem;
