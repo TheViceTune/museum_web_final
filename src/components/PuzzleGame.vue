@@ -35,7 +35,7 @@
             :key="piece"
             class="piece"
             :class="{ revealed: boardState[board].revealed[piece - 1] }"
-            @click="onPieceClick(board, piece - 1)"
+            @click.stop="onPieceClick(board, piece - 1)"
             :style="getPieceStyle(board, piece - 1)"
           >
             <div
@@ -66,25 +66,6 @@
           class="board-complete-badge"
         >
           ✅ Hoàn thành
-        </div>
-      </div>
-    </div>
-
-    <!-- Large final image -->
-    <div class="final-image-container" @click="onFinalClick">
-      <div
-        class="final-image"
-        :style="{ backgroundImage: `url(${finalImage})` }"
-      >
-        <div class="final-overlay" v-if="!allBoardsCompleted">
-          <span class="lock-icon">🔒</span>
-          <span class="final-label">Mở khóa khi hoàn thành 4 bức tranh</span>
-          <span class="final-progress">{{ completedBoards }}/4</span>
-        </div>
-        <div class="final-overlay" v-else>
-          <span class="final-label"
-            >🎉 Bấm để khám phá bức tranh cuối cùng</span
-          >
         </div>
       </div>
     </div>
@@ -155,22 +136,6 @@ watch(
 );
 
 // ------ Computed ------
-const allBoardsCompleted = computed(() => {
-  for (const board of [1, 2, 3, 4]) {
-    if (!boardState[board].finalAnswered) return false;
-  }
-  return true;
-});
-
-const completedBoards = computed(() => {
-  let count = 0;
-  for (const board of [1, 2, 3, 4]) {
-    if (boardState[board].finalAnswered) count++;
-  }
-  return count;
-});
-
-// Check if there is any progress to reset
 const hasProgress = computed(() => {
   for (const board of [1, 2, 3, 4]) {
     const state = boardState[board];
@@ -183,9 +148,7 @@ const hasProgress = computed(() => {
 function resetGame() {
   if (!confirm("Bạn có chắc chắn muốn đặt lại toàn bộ tiến trình trò chơi?"))
     return;
-
   localStorage.removeItem(STORAGE_KEY);
-  // Reset boardState to default
   const newState = {
     1: { revealed: [false, false, false, false], finalAnswered: false },
     2: { revealed: [false, false, false, false], finalAnswered: false },
@@ -193,25 +156,19 @@ function resetGame() {
     4: { revealed: [false, false, false, false], finalAnswered: false },
   };
   Object.assign(boardState, newState);
-
-  // Close any open modal
   modalVisible.value = false;
   currentBoard = null;
   currentPiece = null;
   isFinalMode = false;
 }
 
-// -------- IMAGE PATHS (FIXED) ----------
-// Use encodeURI to handle spaces and special characters
-// Place your images in public/museum_photos/Quiz/...
+// -------- IMAGE PATHS ----------
 const boardImages = {
   1: encodeURI("/museum_photos/Quiz/Câu 1/Quiz Tên lửa SAM-2.png"),
   2: encodeURI("/museum_photos/Quiz/Câu 2/Q2 - MIG-17.png"),
   3: encodeURI("/museum_photos/Quiz/Câu 3/Quiz 3 - MIG 21.png"),
   4: encodeURI("/museum_photos/artifacts/1965 - 1975/Radar P35.png"),
 };
-const finalImage =
-  "https://via.placeholder.com/600x400/195484/ffffff?text=Final+Image";
 
 // ------ Modal state ------
 const modalVisible = ref(false);
@@ -237,27 +194,40 @@ function getPieceStyle(board, piece) {
   else if (piece === 3) bgPos = "100% 100%";
   const blur = boardState[board].revealed[piece] ? "blur(0px)" : "blur(14px)";
   return {
-    // Use encodeURI again in case the URL wasn't encoded previously
     backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
     backgroundSize: "200% 200%",
     backgroundPosition: bgPos,
     filter: blur,
     transition: "filter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
-    backgroundColor: "#e8e8e8", // fallback if image fails
+    backgroundColor: "#e8e8e8",
   };
 }
 
 // ------ Click handlers ------
 function onPieceClick(board, piece) {
-  if (boardState[board].revealed[piece]) return;
-  if (boardState[board].finalAnswered) return;
+  console.log("🔍 Piece clicked:", { board, piece });
+  console.log("📊 Current state:", boardState[board]);
+
+  // Prevent click if piece already revealed or board completed
+  if (boardState[board].revealed[piece]) {
+    console.log("⛔ Piece already revealed");
+    return;
+  }
+  if (boardState[board].finalAnswered) {
+    console.log("⛔ Board already completed");
+    return;
+  }
   openQuestion(board, piece);
 }
 
 function openQuestion(board, piece) {
   const key = `${board}-${piece}`;
   const q = puzzleQuestions[key];
-  if (!q) return;
+  console.log("📖 Opening question:", { key, q });
+  if (!q) {
+    console.error("❌ Question not found for key:", key);
+    return;
+  }
 
   currentBoard = board;
   currentPiece = piece;
@@ -290,7 +260,7 @@ function openFinalQuestion(board) {
 }
 
 function onModalAnswer(selected) {
-  // Answer recorded, but we handle reveal in onModalContinue
+  // Just record, handled in continue
 }
 
 function onModalContinue() {
@@ -302,16 +272,14 @@ function onModalContinue() {
     currentBoard = null;
     currentPiece = null;
     isFinalMode = false;
-    if (allBoardsCompleted.value) {
-      // Optionally show a congratulation
-    }
     return;
   }
 
-  // Reveal the piece one by one
+  // Reveal the piece
   if (currentBoard !== null && currentPiece !== null) {
     if (!boardState[currentBoard].revealed[currentPiece]) {
       boardState[currentBoard].revealed[currentPiece] = true;
+      // Check if all pieces revealed → open final question after a delay
       if (boardState[currentBoard].revealed.every(Boolean)) {
         setTimeout(() => {
           openFinalQuestion(currentBoard);
@@ -332,20 +300,9 @@ function closeModal() {
   isFinalMode = false;
 }
 
-function onFinalClick() {
-  if (!allBoardsCompleted.value) {
-    alert(
-      "Bạn cần hoàn thành tất cả 4 bức tranh trước khi mở khóa bức tranh cuối cùng!",
-    );
-    return;
-  }
-  alert(
-    "🎉 Chúc mừng bạn đã hoàn thành toàn bộ thử thách! Bức tranh cuối cùng sẽ được hiển thị ở đây.",
-  );
-}
-
 onMounted(() => {
-  // Load state already done
+  // State already loaded from localStorage
+  console.log("✅ PuzzleGame mounted, state:", boardState);
 });
 </script>
 
@@ -364,7 +321,6 @@ onMounted(() => {
   margin-bottom: 24px;
   text-align: center;
 }
-
 .reset-container {
   text-align: center;
   margin-bottom: 16px;
@@ -384,8 +340,6 @@ onMounted(() => {
   background: #b71c1c;
   transform: scale(1.05);
 }
-
-/* ... rest of styles (boards-grid, board-card, pieces-grid, etc.) ... */
 .boards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -458,7 +412,7 @@ onMounted(() => {
   justify-content: center;
   color: white;
   transition: background 0.3s ease;
-  pointer-events: none;
+  pointer-events: none; /* Ensures click passes to the piece */
 }
 .piece-number {
   font-size: 28px;
@@ -511,51 +465,6 @@ onMounted(() => {
   color: white;
   font-weight: 600;
   font-size: 14px;
-}
-.final-image-container {
-  border-radius: var(--radius);
-  overflow: hidden;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.final-image-container:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-.final-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.final-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  backdrop-filter: blur(6px);
-  transition: var(--transition);
-}
-.final-overlay .lock-icon {
-  font-size: 48px;
-  margin-bottom: 8px;
-}
-.final-label {
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  padding: 0 20px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-.final-progress {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-top: 6px;
 }
 
 @media (max-width: 768px) {

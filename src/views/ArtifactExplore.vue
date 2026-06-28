@@ -21,7 +21,11 @@
 
       <Timeline v-model="currentPeriod" v-slide-in:bottom="{ delay: 100 }" />
 
-      <div class="carousel-wrapper" v-slide-in:bottom="{ delay: 200 }">
+      <div
+        class="carousel-wrapper"
+        ref="carouselRef"
+        v-slide-in:bottom="{ delay: 200 }"
+      >
         <button
           class="arrow-btn left"
           @click="prevExhibit"
@@ -63,8 +67,15 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
-import { useRouter } from "vue-router";
+import {
+  ref,
+  computed,
+  watch,
+  onMounted,
+  onBeforeUnmount,
+  nextTick,
+} from "vue";
+import { useRouter, useRoute } from "vue-router";
 import Timeline from "@/components/Timeline.vue";
 import ArtifactDisplay from "@/components/ArtifactDisplay.vue";
 import InfoPanel from "@/components/InfoPanel.vue";
@@ -72,10 +83,74 @@ import { exhibitsData, periods } from "@/data/exhibits";
 import noiseAudio from "/noise.mp3";
 
 const router = useRouter();
+const route = useRoute();
 const audioRef = ref(null);
+const carouselRef = ref(null);
 let audioElement = null;
 
+// Find exhibit by ID across all periods
+function findExhibitById(id) {
+  if (!id) return null;
+  for (const period of periods) {
+    const exhibits = exhibitsData[period] || [];
+    const found = exhibits.find((ex) => ex.id === id);
+    if (found) {
+      return { period, exhibit: found };
+    }
+  }
+  return null;
+}
+
+// Get exhibitId from query param
+const exhibitId = computed(() => route.query.exhibit || null);
+
+// Set initial period and index based on query param
+const currentPeriod = ref(periods[0]);
+const exhibitIndex = ref(0);
+
+// Function to load exhibit by ID
+function loadExhibitById(id) {
+  console.log("🔍 loadExhibitById called with id:", id);
+  const result = findExhibitById(id);
+  if (result) {
+    console.log("✅ Found exhibit:", result);
+    const { period, exhibit } = result;
+    const periodIndex = periods.indexOf(period);
+    if (periodIndex !== -1) {
+      currentPeriod.value = period;
+      const exhibits = exhibitsData[period] || [];
+      const idx = exhibits.findIndex((e) => e.id === exhibit.id);
+      if (idx !== -1) {
+        exhibitIndex.value = idx;
+        // Scroll to carousel after DOM update
+        nextTick(() => {
+          if (carouselRef.value) {
+            console.log("📜 Scrolling to carousel");
+            carouselRef.value.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          } else {
+            console.warn("⚠️ carouselRef not found");
+          }
+        });
+        return true;
+      }
+    }
+  }
+  console.warn("❌ Exhibit not found for id:", id);
+  return false;
+}
+
+// On mount, check for exhibit query param
 onMounted(() => {
+  console.log("🚀 ArtifactExplore mounted");
+  console.log("🔍 route.query.exhibit:", route.query.exhibit);
+  if (route.query.exhibit) {
+    loadExhibitById(route.query.exhibit);
+  }
+
+  // Audio autoplay
   audioElement = audioRef.value;
   if (audioElement) {
     audioElement.play().catch(() => {});
@@ -92,8 +167,18 @@ onMounted(() => {
   });
 });
 
-const currentPeriod = ref(periods[0]);
-const exhibitIndex = ref(0);
+// If query param changes later, reload
+watch(
+  () => route.query.exhibit,
+  (newId) => {
+    console.log("🔄 route.query.exhibit changed to:", newId);
+    if (newId) {
+      loadExhibitById(newId);
+    }
+  },
+);
+
+// Existing exhibit logic
 const exhibitsInPeriod = computed(
   () => exhibitsData[currentPeriod.value] || [],
 );
@@ -120,8 +205,6 @@ function prevExhibit() {
   min-height: 100vh;
   width: 100%;
 }
-
-/* Fixed background – same as ExploreHome */
 .page-bg {
   position: fixed;
   top: 0;
@@ -129,14 +212,13 @@ function prevExhibit() {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("/museum_photos/Trang tham quan/Nền.png");
+  background-image: url("/museum_photos/nen kham pha.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   filter: blur(8px) brightness(0.7);
   transform: scale(1.05);
 }
-
 .page-overlay {
   position: fixed;
   top: 0;
@@ -146,13 +228,11 @@ function prevExhibit() {
   z-index: 0;
   background: rgba(0, 0, 0, 0.3);
 }
-
 .page-content {
   position: relative;
   z-index: 1;
   padding: 40px 0 20px;
 }
-
 .page-title {
   font-size: 32px;
   font-weight: 700;
@@ -169,10 +249,9 @@ function prevExhibit() {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* All styles from the original ArtifactExplore.vue (unchanged except added bg) */
 .explore-layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 420px;
   gap: 30px;
 }
 @media (max-width: 900px) {

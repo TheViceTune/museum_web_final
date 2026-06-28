@@ -4,6 +4,7 @@ export const storyCards = [
     title: "Lời thề quyết tử bảo vệ bầu trời thủ đô",
     excerpt:
       'Bầu trời đêm Hà Nội cuối năm 1972 đặc quánh bóng tối và khét lẹt mùi bom đạn. Ở cao độ hàng nghìn mét, khi hai quả tên lửa phóng đi không đủ sức quật ngã "siêu pháo đài bay" B-52, một quyết định chớp nhoáng đã được đưa ra...',
+    image: "/museum_photos/stories/Bài 1/T1 - B1 - A1.png",
     fullStory: `
       <p>Bầu trời đêm Hà Nội cuối năm 1972 đặc quánh bóng tối và khét lẹt mùi bom đạn. Ở cao độ hàng nghìn mét, khi hai quả tên lửa phóng đi không đủ sức quật ngã "siêu pháo đài bay" B-52, một quyết định chớp nhoáng đã được đưa ra.</p>
       <p>Ít ai ngờ, người phi công quả cảm ấy từng là một sinh viên Bách Khoa hào hoa của khu phố Đặng Dung (Hà Nội). Để được khoác lên mình bộ đồ bay, anh đã tự rèn luyện tiền đình bằng cách... trèo lên sân thượng quay vòng tròn mỗi chiều. Mang theo sự lãng mạn của tuổi trẻ, Thiều từng nửa đùa nửa thật xin đi đánh ban ngày, tính bắn rơi máy bay địch để lấy cái "đuôi" về tặng bạn gái. Nhưng khi nhận nhiệm vụ đánh đêm để diệt B-52, người thanh niên ấy đã đanh thép thốt lên lời thề định mệnh với người chỉ huy:</p>
@@ -23,7 +24,11 @@ export const storyCards = [
       </div>
       <p>Năm 1994, Vũ Xuân Thiều được Nhà nước truy tặng danh hiệu Anh hùng Lực lượng vũ trang nhân dân. Nhưng có lẽ, đài tưởng niệm rực rỡ nhất của anh không nằm trên những tấm huân chương, mà nằm trong ký ức của những người ở lại.</p>
       <p>Cho đến tận bây giờ, cứ vào ngày giỗ anh, tại ngôi nhà số 21 phố Đặng Dung, những người lính bay năm xưa tóc đã điểm bạc vẫn lặng lẽ tề tựu. Họ thắp lên nén nhang, chìm vào tĩnh lặng để cùng nhau nhớ về đúng thời khắc mà bầu trời Sơn La năm ấy bùng lên một quầng sáng chói lòa. Chàng trai Hà Nội ấy đã gửi lại tuổi 27 của mình ở khoảng không đen đặc, để bầu trời Thủ đô hôm nay mãi mãi trong xanh.</p>
-      <p><small>Nguồn: Báo Quân đội Nhân dân, Báo Nhân dân, Báo Công an Nhân dân</small></p>
+      <p><small>Nguồn:
+        <a href="https://www.qdnd.vn/50-nam-chien-thang-ha-noi-dien-bien-phu-tren-khong/am-vang-chien-thang/phi-cong-vu-xuan-thieu-qua-ten-lua-thu-ba-diet-b-52-714118" target="_blank">Phi công Vũ Xuân Thiều: Quả tên lửa thứ ba diệt B-52 - Báo Quân đội Nhân dân</a>,
+        <a href="https://nhandan.vn/nguoi-viet-nen-khuc-trang-ca-tren-bau-troi-post730904.html?_gl=1*1jf31ay*_ga*MTQ5MzQ3MjcwOS4xNzc4NDgwMTc3*_ga_2KXX3JWTKT*czE3ODA4MjkzMjckbzE5JGcxJHQxNzgwODI5MzcxJGoxNiRsMCRoMA" target="_blank">Người viết nên khúc tráng ca trên bầu trời - Báo Nhân dân</a>,
+        <a href="https://cand.vn/phi-cong-vu-xuan-thieu-voi-b-52-tat-ca-da-san-sang-quyet-chien-post459244.html" target="_blank">Phi công Vũ Xuân Thiều: “Với B-52, tất cả đã sẵn sàng quyết chiến” - Báo Công an Nhân dân</a>
+      </small></p>
     `,
   },
   {
@@ -31,6 +36,7 @@ export const storyCards = [
     title: 'Huyền thoại "Ông Bảy lúa" - anh chàng nông dân chinh phục bầu trời',
     excerpt:
       'Trên cánh đồng Tháp Mười những năm cuối đời, có một ông lão gầy gò, nước da sạm nắng, ngày ngày xắn quần lội bùn, đào ao thả cá. Bà con lối xóm vẫn gọi thân tình là "Ông Bảy lúa"...',
+    image: "/museum_photos/stories/Bài 2/T1 - B2 - A1.png",
     fullStory: `
       <p>Trên cánh đồng Tháp Mười những năm cuối đời, có một ông lão gầy gò, nước da sạm nắng, ngày ngày xắn quần lội bùn, đào ao thả cá. Bà con lối xóm vẫn gọi thân tình là "Ông Bảy lúa". Nhìn dáng vẻ dung dị ấy, ít ai nghĩ đó chính là người đã từng khiến cả Không quân Hoa Kỳ phải kiêng dè, một trong những "Át chủ bài" huyền thoại của bầu trời Việt Nam.</p>
       <p>Năm 17 tuổi, cậu thanh niên Nguyễn Văn Bảy quyết định trốn nhà đi bộ đội với một lí do khôi hài: bị gia đình ép lấy vợ. Khi ấy, chữ nghĩa bẻ đôi chưa hết lớp 3, xe đạp còn chưa từng cất công tập đi. Cả thế giới của cậu lúc ấy là con trâu và thửa ruộng. Chính ngã rẽ dở khóc dở cười ấy lại trở thành điểm khởi đầu của một trong những huyền thoại vĩ đại nhất lịch sử Không quân Việt Nam.</p>
@@ -53,7 +59,12 @@ export const storyCards = [
       </div>
       <p>Và rồi, khi chiến tranh khép lại, vòng tròn cuộc đời ông cũng trở về nơi nó bắt đầu. Viên Đại tá phi công cởi bỏ bộ quân phục, quay về quê nhà Đồng Tháp. Người thanh niên năm xưa trốn khỏi ruộng đồng để bay lên bầu trời, nay lại thong thả trở về với đất mẹ, xắn quần lội bùn, vác cuốc ra đồng, đào ao thả cá, trở thành "Ông Bảy lúa" rặt miền Tây. Ông đã đi một vòng tròn lớn, nhưng cốt cách của một người nông dân Nam Bộ vẫn vẹn nguyên, không hề phai nhạt.</p>
       <p>Ông Bảy ra đi năm 2019. Từ cậu bé chăn trâu lớp 3 đến phi công huyền thoại, cuộc đời ông là một minh chứng bất diệt cho một lẽ sống đẹp: khí phách anh hùng không nằm ở những thứ hào nhoáng, mà được tôi luyện và tỏa sáng từ chính những điều bình dị nhất của con người Việt Nam.</p>
-      <p><small>Nguồn: Báo VnExpress, Báo Công an Nhân dân, Báo Dân Việt, Báo Nhân dân</small></p>
+      <p><small>Nguồn:
+        <a href="https://vnexpress.net/anh-hung-nguyen-van-bay-qua-loi-ke-cua-cuu-phi-cong-my-3985990.html" target="_blank">Anh hùng Nguyễn Văn Bảy qua lời kể của cựu phi công Mỹ - Báo VnExpress</a>,
+        <a href="https://cand.vn/anh-hung-phi-cong-nguyen-van-bay-huyen-thoai-cua-bau-troi-post774426.html" target="_blank">Anh hùng phi công Nguyễn Văn Bảy: Huyền thoại của bầu trời - Báo Công an Nhân dân</a>,
+        <a href="https://danviet.vn/huyen-thoai-cua-anh-hung-phi-cong-nguyen-van-bay-nguoi-hoc-lop-3-ha-7-may-bay-my-d1328722.html" target="_blank">Huyền thoại của Anh hùng phi công Nguyễn Văn Bảy: Người học lớp 3 hạ 7 máy bay Mỹ - Báo Dân Việt</a>,
+        <a href="https://nhandan.vn/nguyen-van-bay-nguoi-phi-cong-nong-dan-nam-bo-post898977.html" target="_blank">Nguyễn Văn Bảy - Người phi công nông dân Nam Bộ - Báo Nhân dân</a>
+      </small></p>
     `,
   },
   {
@@ -61,6 +72,7 @@ export const storyCards = [
     title: 'Huyền thoại "Chim cắt số 2" Nguyễn Văn Cốc',
     excerpt:
       "Ít ai biết, người phi công duy nhất trong lịch sử Không quân Việt Nam bắn hạ tới 9 máy bay Mỹ lại sở hữu một đôi bàn tay đặc biệt. Đôi tay ấy to khác thường, đến mức mỗi lần làm nhiệm vụ, ông buộc phải tìm cho bằng được đôi găng tay da vừa vặn...",
+    image: "/museum_photos/stories/Bài 3/T1 - B3 - A1.png",
     fullStory: `
       <p>Ít ai biết, người phi công duy nhất trong lịch sử Không quân Việt Nam bắn hạ tới 9 máy bay Mỹ lại sở hữu một đôi bàn tay đặc biệt. Đôi tay ấy to khác thường, đến mức mỗi lần làm nhiệm vụ, ông buộc phải tìm cho bằng được đôi găng tay da vừa vặn thì mới có cảm giác tự tin khi nắm chặt cần lái.</p>
       <p>Chi tiết nhỏ ấy, như một lời mách bảo: con người này sinh ra để cầm lái những điều lớn lao. Ông là Trung tướng, Anh hùng Lực lượng vũ trang nhân dân Nguyễn Văn Cốc, người được mệnh danh là "Chim cắt số 2" - một tượng đài không chỉ của lòng dũng cảm, mà còn của tư duy chiến thuật sáng tạo bậc thầy.</p>
@@ -87,7 +99,11 @@ export const storyCards = [
       <p>Dẫu vậy, đôi cánh của "Chim cắt số 2" chưa bao giờ chịu khuất phục. Cạnh giường bệnh, có một chiếc dù xanh được buộc vào song cửa sổ. Mỗi ngày trôi qua, ông lại nhọc nhằn bám tay vào chiếc dù ấy để tập trị liệu, kiên trì giành giật sự sống và khả năng vận động.</p>
       <p>Khép lại một đời binh nghiệp oanh liệt và một cuộc chiến dai dẳng với bệnh tật, Trung tướng Nguyễn Văn Cốc là hiện thân sống động cho một chân lý: lòng dũng cảm là phẩm chất của trái tim, nhưng chiến thắng vĩ đại thuộc về những bộ óc dám tư duy khác biệt.</p>
       <p>Kỷ lục 9 máy bay và lời chúc "có nhiều Cốc hơn nữa" của Bác Hồ sẽ mãi là di sản quý báu, nhắc nhở thế hệ trẻ hôm nay rằng giới hạn thực sự duy nhất, chính là giới hạn chúng ta tự đặt ra cho bản thân mình.</p>
-      <p><small>Nguồn: Báo Dân Trí, Báo Công an Nhân dân, Báo Quân đội Nhân dân</small></p>
+      <p><small>Nguồn:
+        <a href="https://danviet.vn/bi-mat-cuoc-doi-phi-cong-ban-roi-nhieu-may-bay-nhat-lich-su-khong-quan-viet-nam-d1346265.html" target="_blank">Bí mật cuộc đời phi công bắn rơi nhiều máy bay nhất lịch sử không quân Việt Nam - Báo Dân Việt</a>,
+        <a href="https://cand.vn/gia-biet-khung-troi-post312003.html" target="_blank">Giã biệt khung trời - Báo Công an Nhân dân</a>,
+        <a href="https://www.qdnd.vn/phong-su-dieu-tra/ky-su/trung-tuong-anh-hung-phi-cong-nguyen-van-coc-huyen-thoai-tu-bau-troi-478308" target="_blank">Trung tướng - anh hùng phi công Nguyễn Văn Cốc: Huyền thoại từ bầu trời - Báo Quân đội Nhân dân</a>
+      </small></p>
     `,
   },
   {
@@ -95,6 +111,7 @@ export const storyCards = [
     title: "Ngọn lửa từ những người mở đường",
     excerpt:
       "Có một cái nắm tay diễn ra chớp nhoáng giữa làn khói bom trên sân bay Nội Bài vào một chiều đông tháng 12/1972, không ồn ào mà đủ sức vọng vang qua nửa thế kỷ...",
+    image: "/museum_photos/stories/Bài 4/T1 - B4 - A1.png",
     fullStory: `
       <p>Có một cái nắm tay diễn ra chớp nhoáng giữa làn khói bom trên sân bay Nội Bài vào một chiều đông tháng 12/1972, không ồn ào mà đủ sức vọng vang qua nửa thế kỷ. Đó không đơn thuần là lời chúc mừng của một vị chỉ huy với cấp dưới. Đó là thời khắc thiêng liêng của sự chuyển giao thế hệ: ngọn lửa dũng cảm, bản lĩnh và niềm kiêu hãnh bầu trời đã được truyền trọn vẹn từ tay những người mở đường sang một thế hệ trẻ đầy khí phách.</p>
       <p>Người truyền đi ngọn lửa ấy là Nguyễn Hồng Nhị, người nhận là Lê Văn Kiền. Và cái nôi sinh ra khoảnh khắc lịch sử ấy, chính là Trung đoàn Không quân tiêm kích 921, Đoàn Sao Đỏ anh hùng. Nhận quyết định thành lập ngày 3/2/1964, Trung đoàn Không quân tiêm kích 921 ra đời như một đơn vị mở đường, đặt những nền móng đầu tiên cho bầu trời Tổ quốc. Ngay từ những ngày đầu non trẻ ấy, một hệ tư tưởng thép đã được định hình và nung nấu: "Đã cất cánh là chiến thắng".</p>
@@ -120,7 +137,11 @@ export const storyCards = [
       </div>
       <p>Gần nửa thế kỷ đã trôi qua. Những chiếc MiG làm nên lịch sử giờ đã lùi về tuyến sau, nằm yên bình trong không gian tĩnh lặng của bảo tàng. Những cỗ máy có thể được thay thế bằng thế hệ chiến đấu cơ mới, hiện đại hơn. Nhưng di sản tinh thần của Đoàn Sao Đỏ, tinh thần "đã cất cánh là chiến thắng", vẫn đang được viết tiếp.</p>
       <p>Ngọn lửa thiêng ấy vẫn rực cháy kiêu hãnh trong từng nhịp đập buồng lái hôm nay, nhắc nhở rằng sức mạnh lớn nhất của một thế hệ không nằm ở hệ thống vũ khí hiện đại, mà ở khả năng truyền trọn niềm tin cho những thế hệ sau.</p>
-      <p><small>Nguồn: Báo Phòng không Không quân, Báo Quân đội nhân dân, Tạp chí Văn hóa và Phát triển</small></p>
+      <p><small>Nguồn:
+        <a href="https://phongkhongkhongquan.vn/23274/xung-danh-doan-khong-quan-sao-do-anh-hung.html" target="_blank">Xưng danh Đoàn Không quân Sao Đỏ anh hùng - Báo Phòng không Không quân</a>,
+        <a href="https://www.qdnd.vn/chinh-tri/tin-tuc/khong-chien-dung-manh-ha-canh-tuyet-voi-422580" target="_blank">Không chiến dũng mãnh, hạ cánh tuyệt vời - Báo Quân đội nhân dân</a>,
+        <a href="https://vanhoavaphattrien.vn/nhung-ky-uc-khong-the-quen-mot-tran-khong-chien-a20629.html" target="_blank">“Những ký ức không thể quên”: Một trận không chiến (kỳ 6) - Tạp chí Văn hóa và Phát triển</a>
+      </small></p>
     `,
   },
   {
@@ -129,6 +150,7 @@ export const storyCards = [
       "Vạch nhiễu tìm thù - Lưỡi lửa xuyên bão điện tử, quật đổ pháo đài bay B-52",
     excerpt:
       "Giữa biển nhiễu điện tử dày đặc, những người lính radar vẫn tìm thấy B-52 bằng trí tuệ và bản lĩnh...",
+    image: "/museum_photos/stories/Bài 5/B5 - A1.png",
     fullStory: `
       <p>Giữa biển nhiễu điện tử dày đặc, những người lính radar vẫn tìm thấy B-52 bằng trí tuệ và bản lĩnh.</p>
       <p>Nhiều năm sau chiến tranh, khi nhắc đến chiến thắng "Hà Nội - Điện Biên Phủ trên không", không ít người vẫn truyền tai nhau câu chuyện về việc bộ đội ta đã "nối tầng" tên lửa SAM-2 để bắn hạ những chiếc B-52 bất khả xâm phạm. Đó là một giai thoại hấp dẫn, nhưng sự thật còn đáng kinh ngạc hơn thế.</p>
@@ -156,7 +178,13 @@ export const storyCards = [
       <figcaption>Tổ hợp tên lửa phòng không S-75 Dvina SAM-2 với tầm vươn cao tới 27km và tầm bắn tới 35km (Ảnh: Báo Quân đội nhân dân)</figcaption>
       </div>
       <p>Chiến thắng ấy cho thấy một sự thật giản dị nhưng sâu sắc: trong chiến tranh hiện đại, công nghệ là yếu tố quan trọng, nhưng con người mới là nhân tố quyết định. Bởi cuối cùng, điều đánh bại những lớp nhiễu điện tử dày đặc không phải là một loại vũ khí thần kỳ, mà là trí tuệ, sự sáng tạo và ý chí của những người lính đã kiên trì "vạch nhiễu tìm thù" suốt nhiều năm trên bầu trời Tổ quốc.</p>
-      <p><small>Nguồn: Báo Quân đội nhân dân, Báo Nhân dân, TTXVN</small></p>
+      <p><small>Nguồn:
+        <a href="https://www.qdnd.vn/quoc-phong-an-ninh/nghe-thuat-quan-su-vn/chuyen-vach-nhieu-tim-thu-trong-chien-dich-ha-noi-dien-bien-phu-tren-khong-527512" target="_blank">Chuyện “vạch nhiễu tìm thù” trong Chiến dịch “Hà Nội- Điện Biên Phủ” trên không</a>,
+        <a href="https://www.qdnd.vn/50-nam-chien-thang-ha-noi-dien-bien-phu-tren-khong/am-vang-chien-thang/phuong-phap-ban-ba-diem-sang-tao-su-dung-vuot-tinh-nang-khi-tai-cua-viet-nam-714941" target="_blank">Phương pháp bắn ba điểm - Sáng tạo sử dụng vượt tính năng khí tài của Việt Nam</a>,
+        <a href="https://www.qdnd.vn/50-nam-chien-thang-ha-noi-dien-bien-phu-tren-khong/giai-ma-b52/noi-tang-sam-2-co-can-thiet-va-kha-thi-de-ha-guc-phao-dai-bay-b-52-714575" target="_blank">Nối tầng SAM-2 có cần thiết và khả thi để hạ gục “pháo đài bay” B-52?</a>,
+        <a href="https://nhandan.vn/sam-2-quat-do-phao-dai-bay-b-52-post564988.html" target="_blank">SAM-2 quật đổ pháo đài bay B-52 - Báo Nhân dân</a>,
+        <a href="https://baobacninhtv.vn/chien-dich-linebacker-ii-qua-truyen-thong-my.bbg" target="_blank">Chiến dịch Linebacker II qua truyền thông Mỹ</a>
+      </small></p>
     `,
   },
   {
@@ -164,6 +192,7 @@ export const storyCards = [
     title: 'Độc chiêu phục kích F-111 - Khi "Thần sấm bóng đêm" sa lưới',
     excerpt:
       "Bay thấp để tránh radar, F-111 không ngờ lại gặp một đối thủ mà họ không tính tới...",
+    image: "/museum_photos/stories/Bài 6/B6 - A1.png",
     fullStory: `
       <p>Bay thấp để tránh radar, F-111 không ngờ lại gặp một đối thủ mà họ không tính tới.</p>
       <p>Trong ký ức của nhiều người về cuộc chiến tranh trên bầu trời miền Bắc, B-52 thường là cái tên được nhắc đến nhiều nhất. Thế nhưng, với không ít chiến sĩ phòng không thời bấy giờ, một đối thủ khác còn khiến họ đau đầu hơn: F-111 Aardvark.</p>
@@ -191,7 +220,14 @@ export const storyCards = [
       <figcaption>Chiến sĩ Trung đội tự vệ Nhà máy Cơ khí Mai Ðộng bên mâm pháo và lẵng hoa của Ðại tướng Võ Nguyên Giáp tặng mừng chiến công (Ảnh: Báo Nhân dân)</figcaption>
       </div>
       <p>Nửa thế kỷ đã trôi qua, F-111 vẫn được nhắc đến như một trong những loại máy bay đột kích tiên tiến nhất của thế kỷ XX. Nhưng trên bầu trời Việt Nam năm 1972, lịch sử đã chứng minh rằng không có loại vũ khí nào là bất khả chiến bại. Bởi phía sau mỗi trận thắng không chỉ là đạn pháo hay tên lửa. Đó còn là trí tuệ, sự kiên trì và nghệ thuật biến điểm mạnh của đối phương thành chiếc bẫy dành cho chính họ.</p>
-      <p><small>Nguồn: Báo Dân Trí, Báo Nhân dân, Báo Quân đội nhân dân</small></p>
+      <p><small>Nguồn:
+        <a href="https://www.qdnd.vn/phong-su-dieu-tra/phong-su/ha-noi-mau-va-hoa-tiep-theo-va-het-449160" target="_blank">Hà Nội máu và hoa (Tiếp theo và hết) - Báo Quân đội Nhân dân</a>,
+        <a href="https://nhandan.vn/sang-mai-chien-cong-cua-tu-ve-ha-noi-post729756.html" target="_blank">Sáng mãi chiến công của tự vệ Hà Nội - Báo Nhân dân</a>,
+        <a href="https://www.qdnd.vn/quoc-phong-an-ninh/nghe-thuat-quan-su-vn/sung-phao-phong-khong-trong-chien-dich-ha-noi-dien-bien-phu-tren-khong-527395" target="_blank">Súng-pháo phòng không trong Chiến dịch “Hà Nội-Điện Biên Phủ trên không”</a>,
+        <a href="https://congly.vn/con-lon-dat-ke-the-chan-than-sam-trong-chien-tranh-viet-nam-164161.html" target="_blank">"Con lợn đất" - Kẻ thế chân Thần Sấm trong chiến tranh Việt Nam</a>,
+        <a href="https://dantri.com.vn/thoi-su/gap-lai-nu-tu-ve-ha-noi-tung-chit-khan-tang-danh-may-bay-my-ben-mam-phao-20221216105648465.htm" target="_blank">Gặp lại nữ tự vệ Hà Nội từng chít khăn tang đánh máy bay Mỹ bên mâm pháo</a>,
+        <a href="https://nhandan.vn/nhung-chien-si-tu-ve-bao-ve-bau-troi-thu-do-ngay-ay-post385088.html" target="_blank">Những chiến sĩ tự vệ bảo vệ bầu trời Thủ đô ngày ấy</a>
+      </small></p>
     `,
   },
   {
@@ -199,6 +235,7 @@ export const storyCards = [
     title: "Song kiếm hợp bích - Khi MiG-21 biến bầu trời thành bẫy săn B-52",
     excerpt:
       "Sau mỗi chiến công MiG-21 là cả một mạng lưới dẫn đường âm thầm dưới mặt đất...",
+    image: "/museum_photos/stories/Bài 7/B7 - A1.png",
     fullStory: `
       <p>Sau mỗi chiến công MiG-21 là cả một mạng lưới dẫn đường âm thầm dưới mặt đất.</p>
       <p>Trong ký ức của nhiều người, chiến thắng "Hà Nội - Điện Biên Phủ trên không" thường gắn với những quả tên lửa SAM-2 vút lên giữa màn đêm, xé toang đội hình B-52. Nhưng ít ai biết rằng, trong những ngày tháng ác liệt ấy, còn có một lực lượng khác đang lặng lẽ tham gia cuộc săn tìm những "pháo đài bay". Đó là các phi công MiG-21.</p>
@@ -223,7 +260,14 @@ export const storyCards = [
       </div>
       <p>Trong những điều kiện ấy, những chiến công của Không quân Việt Nam càng trở nên đặc biệt. Các phi công không chỉ phải vượt qua hệ thống hộ tống dày đặc của đối phương. Họ còn phải đối mặt với môi trường gây nhiễu điện tử cực mạnh. Nhiều khi, mục tiêu chỉ xuất hiện trong khoảnh khắc ngắn ngủi trước khi biến mất vào biển nhiễu. Nhưng bằng kinh nghiệm, bản lĩnh và sự dẫn dắt chính xác từ mặt đất, các phi công vẫn tiếp cận được mục tiêu. Và vẫn tung ra những đòn đánh khiến đối phương bất ngờ.</p>
       <p>Nếu MiG-21 là lưỡi kiếm sắc bén trên bầu trời, thì hệ thống radar và dẫn đường mặt đất chính là cánh tay đã đưa lưỡi kiếm ấy đến đúng mục tiêu. Đó thực sự là một "song kiếm hợp bích". Và cũng chính từ sự phối hợp ấy, những chiếc MiG-21 nhỏ bé đã viết nên một trong những chương đặc sắc nhất của lịch sử không chiến Việt Nam. Một lần nữa chứng minh rằng trong chiến tranh hiện đại, ưu thế kỹ thuật không phải lúc nào cũng quyết định kết quả cuối cùng.</p>
-      <p><small>Nguồn: Báo VnExpress, Báo Quân đội nhân dân, Báo Nhân dân</small></p>
+      <p><small>Nguồn:
+        <a href="https://www.qdnd.vn/chinh-tri/tin-tuc/nhung-bi-an-cua-chien-tranh-khong-quan-viet-nam-trong-chien-dich-linebacker-ii-nam-1972-422769" target="_blank">Những bí ẩn của Chiến tranh không quân Việt Nam trong Chiến dịch Linebacker II năm 1972</a>,
+        <a href="https://www.qdnd.vn/50-nam-chien-thang-ha-noi-dien-bien-phu-tren-khong/am-vang-chien-thang/nghe-thuat-tac-chien-trong-chien-dich-phong-khong-ha-noi-hai-phong-cuoi-nam-1972-714968" target="_blank">Nghệ thuật tác chiến trong Chiến dịch Phòng không Hà Nội - Hải Phòng cuối năm 1972</a>,
+        <a href="https://www.qdnd.vn/ho-so-su-kien/70-nam-quan-doi-nhan-dan-viet-nam-anh-hung/nhung-net-doc-dao-cua-chien-dich-phong-khong-ha-noi-hai-phong-nam-1972-261585" target="_blank">Những nét độc đáo của Chiến dịch Phòng không Hà Nội - Hải Phòng năm 1972</a>,
+        <a href="https://www.qdnd.vn/quoc-phong-an-ninh/nghe-thuat-quan-su-vn/chi-dao-cua-quan-uy-trung-uong-va-bo-quoc-phong-doi-voi-chien-dich-phong-khong-ha-noi-hai-phong-1972-713322" target="_blank">Chỉ đạo của Quân ủy Trung ương và Bộ Quốc phòng đối với Chiến dịch Phòng không Hà Nội - Hải Phòng 1972</a>,
+        <a href="https://baogialai.com.vn/huyen-thoai-phi-cong-ke-chuyen-dan-doan-mig-21-bay-tren-noc-dinh-doc-lap-nam-1975-post319121.html" target="_blank">Huyền thoại phi công kể chuyện dẫn đoàn MiG-21 bay trên nóc Dinh Độc Lập năm 1975</a>,
+        <a href="https://vnexpress.net/nhung-chuyen-bay-cam-tu-trong-dem-dong-1972-4553869.html" target="_blank">Những chuyến bay cảm tử trong đêm đông 1972</a>
+      </small></p>
     `,
   },
 ];

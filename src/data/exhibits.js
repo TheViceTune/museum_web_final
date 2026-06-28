@@ -105,7 +105,7 @@ export const exhibitsData = {
       icon: "📡",
       image: "/museum_photos/artifacts/1965 - 1975/Radar P35.png", // placeholder – add image later
       label: "Radar P-35",
-      imageNote: "Ảnh: Báo Tiền Phong",
+      imageNote: "Ảnh tư liệu",
       detail: `
         <h4>Thông tin khái quát</h4>
         <p>P-35 là đài radar cảnh giới do Liên Xô chế tạo, được sử dụng để quan sát vùng trời và dẫn đường cho không quân trong chiến đấu. Hệ thống gồm cabin điều khiển, cabin anten và các thiết bị phát - thu sóng siêu cao tần. Radar có khả năng xác định vị trí mục tiêu theo cự ly và phương vị, hoạt động ở chế độ quét 360 độ với tầm phát hiện lên tới khoảng 350 km và độ cao mục tiêu tới 25.000 m. Hệ thống anten gồm hai khung parabol lớn cùng nhiều máy phát, máy thu tạo nên các cánh sóng chồng lấn, giúp phát hiện mục tiêu ở nhiều độ cao khác nhau.</p>
@@ -127,6 +127,8 @@ export const exhibitsData = {
       label: "MiG-21 số hiệu 5020",
       imageNote: "Ảnh tư liệu",
       detail: `
+        <h4>Thông tin khái quát</h4>
+        <p>Máy bay MiG-21 số hiệu 5020 thuộc biên chế Trung đoàn Không quân tiêm kích 927 (Đoàn Lam Sơn) là một trong những chiếc tiêm kích huyền thoại của Không quân Nhân dân Việt Nam. MiG-21 là máy bay tiêm kích siêu thanh thế hệ thứ ba do Liên Xô phát triển từ giữa những năm 1950. Với tốc độ đạt tới Mach 2, khả năng cơ động cao cùng thiết kế đơn giản, bền bỉ và dễ bảo trì, MiG-21 được đánh giá là một trong những máy bay quân sự ổn định nhất từng được chế tạo.</p>
         <h4>Lịch sử chiến đấu</h4>
         <p>Thuộc biên chế Trung đoàn Không quân tiêm kích 927 (Đoàn Lam Sơn), máy bay MiG-21 số hiệu 5020 đã tham gia nhiều trận không chiến ác liệt trên bầu trời miền Bắc giai đoạn 1967 - 1972. Trên thân máy bay hiện nay được sơn 12 ngôi sao đỏ, tượng trưng cho 12 máy bay Mỹ bị bắn hạ. Không chỉ ghi dấu bằng những chiến công, MiG-21 số hiệu 5020 còn gắn liền với tên tuổi của nhiều phi công xuất sắc như Lê Thanh Đạo, Nguyễn Đức Soát, Nguyễn Văn Nghĩa.</p>
         <h4>Câu chuyện tiêu biểu</h4>
@@ -164,7 +166,7 @@ export const exhibitsData = {
       icon: "🚁",
       image: "/museum_photos/artifacts/1975 - nay/iroquois.jpeg",
       label: "Trực thăng UH-1A số 027",
-      imageNote: "Ảnh: Infonet / Báo VnExpress",
+      imageNote: "Ảnh tư liệu",
       detail: `
         <h4>Thông số kỹ thuật</h4>
         <p>UH-1A Iroquois (hay còn được biết đến với tên gọi Huey) là loại trực thăng đa nhiệm với tổ lái gồm 2 người. Máy bay UH-1 có kíp lái 1 - 4 người; dài 17,4 m; cao 4,39 m; trọng lượng rỗng 2.365 kg, có tải 4.100 kg, trọng lượng cất cánh tối đa 4.309 kg. Máy bay có tốc độ tối đa 217 km/h, tầm bay chuyển sân 507 km, trần bay 5.910 m, sức chứa 14 người.</p>
@@ -184,7 +186,7 @@ export const exhibitsData = {
       icon: "🚁",
       image: "/museum_photos/artifacts/1975 - nay/k-25.jpeg",
       label: "Trực thăng Ka-25 (số 7511)",
-      imageNote: "Ảnh: Báo Tiền Phong",
+      imageNote: "Ảnh tư liệu",
       detail: `
         <h4>Thông số kỹ thuật</h4>
         <p>Ka-25 (Hormone) là trực thăng săn ngầm chủ lực của Không quân Hải quân Việt Nam trong những năm 1980 - 1990. Máy bay đạt tốc độ tối đa khoảng 220 km/h, tầm hoạt động 400 km, được trang bị radar, sonar phát hiện tàu ngầm và có thể mang ngư lôi, bom chống ngầm với tải trọng vũ khí lên tới 1,9 tấn.</p>

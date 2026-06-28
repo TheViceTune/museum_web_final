@@ -5,7 +5,7 @@
     <div class="page-overlay"></div>
 
     <!-- Content -->
-    <div class="container page">
+    <div class="page-content container">
       <h1 class="page-title" v-slide-in:left>Truy tìm mảnh ghép</h1>
       <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
         Hãy thử thách bản thân với những câu hỏi thú vị về quân chủng Phòng
@@ -56,8 +56,44 @@ import PuzzleGame from "@/components/PuzzleGame.vue";
   z-index: 0;
   background: rgba(0, 0, 0, 0.3);
 }
-.container.page {
+.page-content {
   position: relative;
   z-index: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title & subtitle styles – matching ExperienceHome and ExploreHome */
+.page-title {
+  font-family: var(--font-title);
+  font-size: 48px;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.page-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--white);
+  opacity: 0.9;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 28px;
+  }
+  .page-subtitle {
+    font-size: 16px;
+    padding: 0 20px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="disclaimer">
-    <strong>THÔNG BÁO:</strong> Các nội dung truyền thông được đăng tải trên
-    trang này là một phần của quá trình học tập và thực hành trong khuôn khổ môn
+    <strong>LƯU Ý:</strong> Các nội dung truyền thông được đăng tải trên trang
+    này là một phần của quá trình học tập và thực hành trong khuôn khổ môn
     học/tổ chức đào tạo. Đây <strong>không phải</strong> là sản phẩm thương mại
     chính thức của bất kỳ thương hiệu, tổ chức hay cá nhân nào.<br /><br />
     Trong quá trình thực hiện, sinh viên có thể đã sử dụng, tham khảo tư liệu,

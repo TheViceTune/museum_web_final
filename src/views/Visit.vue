@@ -16,8 +16,8 @@
           <h3>🕐 Giờ mở cửa</h3>
           <ul>
             <li>
-              <strong>Thứ 2 – Thứ 5, Thứ 7, Chủ Nhật</strong><br />08:00 – 11:00
-              &amp; 13:00 – 16:00
+              <strong>Thứ 2 – Thứ 5</strong><br />08:00 – 11:00 &amp; 13:00 –
+              16:00
             </li>
             <li>
               <strong>Thứ 7, Chủ nhật</strong><br />Phục vụ khách lẻ tham quan
@@ -84,7 +84,7 @@
             <strong>Điện thoại quân sự:</strong> 069.562.323 · 069.562.322
           </div>
           <div><strong>Email:</strong> btpkkq171@gmail.com</div>
-          <div><strong>Follow:</strong> [ Facebook · YouTube · Zalo ]</div>
+          <div><strong>Facebook:</strong>Bảo tàng Phòng không - Không quân</div>
         </div>
       </div>
     </div>

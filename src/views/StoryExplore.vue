@@ -22,7 +22,7 @@
           <div
             class="story-card-bg"
             :style="{
-              backgroundImage: `url(${story.image || 'https://via.placeholder.com/400x400/195484/ffffff?text=' + story.title})`,
+              backgroundImage: `url(${encodeImagePath(story.image) || 'https://via.placeholder.com/400x400/195484/ffffff?text=' + story.title})`,
             }"
           ></div>
           <div class="story-card-overlay"></div>
@@ -46,16 +46,26 @@
 <script setup>
 import { storyCards } from "@/data/storyData";
 const stories = storyCards;
+
+// Helper to URL‑encode image paths (handles spaces and Vietnamese characters)
+function encodeImagePath(path) {
+  if (!path) return "";
+  // Split path into parts and encode each part separately
+  const parts = path.split("/");
+  return parts
+    .map((part, index) => (index === 0 ? part : encodeURIComponent(part)))
+    .join("/");
+}
 </script>
 
 <style scoped>
+/* ... (all styles unchanged, but ensure the gradient is reversed) ... */
 .story-page {
   position: relative;
   min-height: 100vh;
   width: 100%;
 }
 
-/* Fixed background – same as ExploreHome */
 .page-bg {
   position: fixed;
   top: 0;
@@ -63,7 +73,7 @@ const stories = storyCards;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("/museum_photos/Trang tham quan/Nền.png");
+  background-image: url("/museum_photos/nen kham pha.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -103,7 +113,6 @@ const stories = storyCards;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Existing styles from original StoryExplore.vue – unchanged */
 .story-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -131,14 +140,15 @@ const stories = storyCards;
   background-size: cover;
   background-position: center;
 }
+/* ✅ REVERSED GRADIENT: dark at bottom (for text), clear at top */
 .story-card-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.6) 0%,
+    transparent 0%,
     rgba(0, 0, 0, 0.2) 50%,
-    transparent 100%
+    rgba(0, 0, 0, 0.8) 100%
   );
 }
 .story-card-content {

@@ -218,7 +218,7 @@ export const finalQuestions = {
     correct: 0,
     explain:
       "Đây là tên lửa SAM-2 - loại tên lửa đất đối không huyền thoại đã đánh bại B-52 trong chiến dịch Linebacker II.",
-    link: "#/kham-pha/ky-uc/song-kiem-hop-bich",
+    link: "/kham-pha/hien-vat?exhibit=sam2",
   },
   2: {
     q: "Các mảnh ghép đã được khám phá, bạn hãy đoán xem đây là khí tài nào?",
@@ -231,7 +231,7 @@ export const finalQuestions = {
     correct: 1,
     explain:
       "Đây là máy bay MiG-17 - tiêm kích phản lực huyền thoại đã mở đầu những chiến thắng đầu tiên trên bầu trời Việt Nam.",
-    link: "#/kham-pha/ky-uc/ong-bay-lua",
+    link: "/kham-pha/hien-vat?exhibit=mig17",
   },
   3: {
     q: "Các mảnh ghép đã được khám phá, bạn hãy đoán xem đây là khí tài nào?",
@@ -244,7 +244,7 @@ export const finalQuestions = {
     correct: 1,
     explain:
       "Đây là máy bay MiG-21 - tiêm kích phản lực siêu thanh đã ghi dấu với 14 ngôi sao đỏ trên thân máy bay.",
-    link: "#/kham-pha/ky-uc/song-kiem-hop-bich",
+    link: "/kham-pha/hien-vat?exhibit=mig21_4324",
   },
   4: {
     q: "Các mảnh ghép đã được khám phá, bạn hãy đoán xem đây là khí tài nào?",
@@ -257,6 +257,6 @@ export const finalQuestions = {
     correct: 3,
     explain:
       'Đây là radar P-35 - "mắt thần canh giữ bầu trời", đã phát hiện sớm B-52 trong chiến dịch Điện Biên Phủ trên không.',
-    link: "#/kham-pha/ky-uc/vach-nhieu-tim-thu",
+    link: "/kham-pha/hien-vat?exhibit=radar_p35",
   },
 };

@@ -143,33 +143,33 @@ const genzList = [
     photo: encodePath("/museum_photos/experience/thoughts/Nguyễn Minh Nga.png"),
   },
   {
-    name: "Nguyễn Văn Anh",
-    age: 22,
-    school: "ĐH Bách Khoa",
+    name: "Trần Hà My",
+    age: 20,
+    school: "ĐH DAV",
     quote:
       "“Cảm giác bảo tàng làm khá tốt ở phần không gian, không bị ngột ngạt như mình từng nghĩ về bảo tàng quân sự.”",
-    photo: "https://via.placeholder.com/400x250/195484/ffffff?text=Van+Anh",
+    photo: "/museum_photos/experience/thoughts/tran-ha-my.png",
   },
   {
-    name: "Trần Thị Bình",
-    age: 19,
-    school: "Sinh viên",
+    name: "Trần Mai Hiên",
+    age: 21,
+    school: "ĐH DAV",
     quote:
       "“Không nghĩ một bảo tàng quân sự ở Hà Nội lại cuốn vậy luôn. Đi xong cảm giác vừa chill vừa học được nhiều thứ.”",
     photo: encodePath("/museum_photos/experience/thoughts/Trần Mai Hiên.png"),
   },
   {
-    name: "Lê Văn Cường",
-    age: 23,
-    school: "ĐH Quốc gia Hà Nội",
+    name: "Lê Việt Anh",
+    age: 21,
+    school: "ĐH DAV",
     quote:
       "“Có những khoảnh khắc đứng dưới máy bay thật sự thấy choáng ngợp. Tự nhiên hiểu hơn về một giai đoạn lịch sử.”",
     photo: encodePath("/museum_photos/experience/thoughts/Lê Việt Anh.png"),
   },
   {
-    name: "Phạm Thị Dung",
+    name: "Trịnh Gia Thanh Vân",
     age: 20,
-    school: "Học viện Báo chí và Tuyên truyền",
+    school: "ĐH Quốc Gia Hà Nội",
     quote:
       "“Mình thấy việc bảo tàng tổ chức các trò chơi tương tác rất hay, giúp giới trẻ tiếp cận lịch sử một cách nhẹ nhàng và dễ nhớ hơn.”",
     photo: encodePath(

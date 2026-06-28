@@ -4,9 +4,9 @@
     <div class="page-bg"></div>
     <div class="page-overlay"></div>
 
-    <!-- Content -->
-    <div class="container page">
-      <h1 class="page-title" v-slide-in:left>Trải nghiệm</h1>
+    <!-- Content – centered like Explore -->
+    <div class="experience-content">
+      <h1 class="page-title" v-slide-in:left>TRẢI NGHIỆM</h1>
       <p class="page-subtitle" v-slide-in:left="{ delay: 100 }">
         Khám phá những góc nhìn đa dạng về bảo tàng qua các hoạt động tương tác.
       </p>
@@ -53,12 +53,17 @@
 </template>
 
 <style scoped>
-/* Full‑page background */
+/* Full‑page background – same as Explore */
 .experience-home-page {
   position: relative;
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
+
 .page-bg {
   position: fixed;
   top: 0;
@@ -73,6 +78,7 @@
   filter: blur(8px) brightness(0.7);
   transform: scale(1.05);
 }
+
 .page-overlay {
   position: fixed;
   top: 0;
@@ -82,18 +88,46 @@
   z-index: 0;
   background: rgba(0, 0, 0, 0.3);
 }
-.container.page {
+
+/* Content – centered, same as Explore */
+.experience-content {
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
 }
 
-/* Existing card styles (unchanged) */
+/* Title styling – matches Explore Home */
+.page-title {
+  font-family: var(--font-title);
+  font-size: 48px;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.page-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--white);
+  opacity: 0.9;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards – same as Explore but with original experience card height */
 .experience-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
+
 .exp-card {
   position: relative;
   border-radius: var(--radius);
@@ -103,18 +137,20 @@
   color: var(--white);
   display: block;
   transition: var(--transition);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 .exp-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
+
 .exp-card-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
 }
+
 .exp-card-overlay {
   position: absolute;
   inset: 0;
@@ -125,6 +161,7 @@
     rgba(0, 0, 0, 0.7) 100%
   );
 }
+
 .exp-card-content {
   position: relative;
   z-index: 2;
@@ -134,18 +171,23 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
 .exp-card-content h3 {
   font-family: var(--font-title);
   font-size: 24px;
   letter-spacing: 0.5px;
   margin-bottom: 8px;
 }
+
 .exp-card-content p {
+  font-family: var(--font-body);
   font-size: 15px;
   opacity: 0.9;
   margin-bottom: 16px;
   max-width: 90%;
+  line-height: 1.6;
 }
+
 .exp-card-content .btn-gold {
   background: var(--gold);
   color: var(--primary-dark);
@@ -160,17 +202,34 @@
 .exp-card-content .btn-gold:hover {
   background: var(--gold-light);
 }
+
+/* Responsive */
 @media (max-width: 900px) {
   .experience-cards {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .page-title {
+    font-size: 36px;
+  }
+  .page-subtitle {
+    font-size: 16px;
+    padding: 0 20px;
   }
 }
 @media (max-width: 600px) {
   .experience-cards {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   .exp-card {
     height: 300px;
+  }
+  .page-title {
+    font-size: 28px;
+  }
+  .experience-home-page {
+    padding: 20px 12px;
   }
 }
 </style>

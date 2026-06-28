@@ -41,6 +41,9 @@
 
 <script setup>
 import { ref, watch } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const props = defineProps({
   visible: Boolean,
@@ -95,14 +98,35 @@ function continueGame() {
 }
 
 function openLearnMore() {
-  if (props.learnMoreLink) {
-    // Use router if it's an internal link, else open in new tab
-    if (props.learnMoreLink.startsWith("#")) {
-      window.location.hash = props.learnMoreLink.slice(1);
-    } else {
-      window.open(props.learnMoreLink, "_blank");
-    }
+  const link = props.learnMoreLink;
+  console.log("📖 openLearnMore called with link:", link);
+  if (!link) {
+    console.warn("⚠️ No learnMoreLink provided");
+    return;
   }
+
+  // Internal path (starts with '/') – use router.push
+  if (link.startsWith("/")) {
+    console.log("🔄 Navigating to internal path:", link);
+    router.push(link);
+    // Close modal after navigation
+    emit("update:visible", false);
+    emit("close");
+    return;
+  }
+
+  // Hash link (starts with '#') – use window.location
+  if (link.startsWith("#")) {
+    console.log("🔄 Navigating to hash link:", link);
+    window.location.hash = link.slice(1);
+    emit("update:visible", false);
+    emit("close");
+    return;
+  }
+
+  // Otherwise, open as external link
+  console.log("🔗 Opening external link:", link);
+  window.open(link, "_blank");
 }
 
 function close() {
@@ -112,7 +136,7 @@ function close() {
 </script>
 
 <style scoped>
-/* Same as before, with minor additions */
+/* Same as before – unchanged */
 .modal-overlay {
   position: fixed;
   inset: 0;

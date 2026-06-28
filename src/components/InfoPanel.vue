@@ -22,9 +22,6 @@
         ></div>
       </transition>
     </div>
-
-    <!-- Source note (always visible) -->
-    <p class="source">📖 Nguồn: TTXVN · Báo Vĩnh Long</p>
   </div>
 </template>
 

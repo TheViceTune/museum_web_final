@@ -1,54 +1,64 @@
 <template>
-  <div class="container page">
-    <div class="story-detail" v-if="story">
-      <h1 class="page-title" v-slide-in:left>{{ story.title }}</h1>
-      <div
-        class="story-content"
-        v-html="story.fullStory"
-        v-slide-in:bottom
-      ></div>
+  <div class="story-detail-page">
+    <!-- Full‑page background -->
+    <div class="page-bg"></div>
+    <div class="page-overlay"></div>
 
-      <div class="story-navigation" v-slide-in:bottom>
-        <router-link
-          :to="`/kham-pha/ky-uc/${prevId}`"
-          v-if="prevId"
-          class="btn-outline"
-          >← Trước</router-link
-        >
-        <router-link to="/kham-pha/ky-uc" class="btn-outline"
-          >📖 Danh sách</router-link
-        >
-        <router-link
-          :to="`/kham-pha/ky-uc/${nextId}`"
-          v-if="nextId"
-          class="btn-outline"
-          >Sau →</router-link
+    <!-- Content -->
+    <div class="container page">
+      <div class="story-detail" v-if="story">
+        <h1 class="page-title" v-slide-in:left>{{ story.title }}</h1>
+        <div
+          class="story-content"
+          v-html="story.fullStory"
+          v-slide-in:bottom
+        ></div>
+
+        <div class="story-navigation" v-slide-in:bottom>
+          <router-link
+            :to="`/kham-pha/ky-uc/${prevId}`"
+            v-if="prevId"
+            class="btn-outline story-nav-btn"
+          >
+            ← Trước
+          </router-link>
+          <router-link to="/kham-pha/ky-uc" class="btn-outline story-nav-btn">
+            📖 Danh sách
+          </router-link>
+          <router-link
+            :to="`/kham-pha/ky-uc/${nextId}`"
+            v-if="nextId"
+            class="btn-outline story-nav-btn"
+          >
+            Sau →
+          </router-link>
+        </div>
+      </div>
+
+      <div v-else class="not-found">
+        <p>Không tìm thấy câu chuyện.</p>
+        <router-link to="/kham-pha/ky-uc" class="btn-outline story-nav-btn"
+          >Quay lại</router-link
         >
       </div>
-    </div>
-    <div v-else>
-      <p>Không tìm thấy câu chuyện.</p>
-      <router-link to="/kham-pha/ky-uc" class="btn-outline"
-        >Quay lại</router-link
-      >
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, watch, nextTick } from "vue";
 import { useRoute } from "vue-router";
 import { storyCards } from "@/data/storyData";
 
 const route = useRoute();
-const storyId = route.params.id;
 
 const currentIndex = computed(() => {
-  return storyCards.findIndex((s) => s.id === storyId);
+  return storyCards.findIndex((s) => s.id === route.params.id);
 });
 
 const story = computed(() => {
-  return storyCards.find((s) => s.id === storyId);
+  if (currentIndex.value === -1) return null;
+  return storyCards[currentIndex.value];
 });
 
 const prevId = computed(() => {
@@ -62,9 +72,65 @@ const nextId = computed(() => {
   if (idx < storyCards.length - 1) return storyCards[idx + 1].id;
   return null;
 });
+
+watch(
+  () => route.params.id,
+  () => {
+    nextTick(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  },
+);
 </script>
 
 <style scoped>
+/* Full‑page background */
+.story-detail-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("/museum_photos/nen kham pha.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px) brightness(0.7);
+  transform: scale(1.05);
+}
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.container.page {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+}
+
+.page-title {
+  font-family: var(--font-title);
+  font-size: 36px;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
 .story-detail {
   max-width: 800px;
   margin: 0 auto;
@@ -80,18 +146,16 @@ const nextId = computed(() => {
   box-shadow: var(--shadow);
 }
 
-/* All text left‑aligned by default */
-.story-content :deep(p) {
+.story-content p {
   margin-bottom: 16px;
   text-align: left;
 }
-.story-content :deep(h4) {
+.story-content h4 {
   font-weight: 700;
   margin-top: 20px;
   text-align: left;
 }
 
-/* ----- ISOLATED STYLING FOR .story-image-wrapper (using :deep) ----- */
 .story-content :deep(.story-image-wrapper) {
   margin: 24px auto;
   text-align: center;
@@ -116,7 +180,19 @@ const nextId = computed(() => {
   display: block;
 }
 
-/* ----- Navigation (unchanged) ----- */
+/* Navigation buttons – custom gold style */
+.story-nav-btn {
+  border-color: #fada2d !important;
+  color: #fada2d !important;
+  background: transparent !important;
+}
+
+.story-nav-btn:hover {
+  background: #fada2d !important;
+  color: var(--primary-dark) !important;
+  border-color: #fada2d !important;
+}
+
 .story-navigation {
   display: flex;
   justify-content: space-between;
@@ -128,6 +204,11 @@ const nextId = computed(() => {
   padding: 8px 20px;
 }
 
+.not-found {
+  text-align: center;
+  padding: 40px 0;
+}
+
 @media (max-width: 600px) {
   .story-navigation {
     flex-direction: column;
@@ -135,6 +216,9 @@ const nextId = computed(() => {
   }
   .story-navigation .btn-outline {
     text-align: center;
+  }
+  .page-title {
+    font-size: 28px;
   }
 }
 </style>

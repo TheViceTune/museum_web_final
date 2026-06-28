@@ -60,31 +60,31 @@ const slides = [
     description:
       "Tái hiện những câu chuyện, hiện vật và ký ức của lực lượng Phòng không - Không quân Việt Nam trên hành trình bảo vệ Tổ Quốc",
     cta: "KHÁM PHÁ",
-    image: encodePath("/museum_photos/home/1.JPG"),
+    image: encodePath("/museum_photos/home/1_2.jpg"),
   },
   {
-    badge: "Chiến công oanh liệt",
-    title: "BẦU TRỜI\nRỰC LỬA",
+    badge: "Bảo tàng Phòng không - Không quân",
+    title: "VÙNG TRỜI\nKÝ ỨC",
     description:
-      "Những chiến tích vang dội của lực lượng phòng không trong cuộc kháng chiến chống Mỹ cứu nước.",
+      "Tái hiện những câu chuyện, hiện vật và ký ức của lực lượng Phòng không - Không quân Việt Nam trên hành trình bảo vệ Tổ Quốc",
     cta: "KHÁM PHÁ",
-    image: encodePath("/museum_photos/home/2.jpeg"),
+    image: encodePath("/museum_photos/home/2_2.jpeg"),
   },
   {
-    badge: "Phi công huyền thoại",
-    title: "ĐÔI CÁNH\nTHÉP",
+    badge: "Bảo tàng Phòng không - Không quân",
+    title: "VÙNG TRỜI\nKÝ ỨC",
     description:
-      "Những người con anh dũng đã làm nên lịch sử trên bầu trời Việt Nam.",
+      "Tái hiện những câu chuyện, hiện vật và ký ức của lực lượng Phòng không - Không quân Việt Nam trên hành trình bảo vệ Tổ Quốc",
     cta: "KHÁM PHÁ",
-    image: encodePath("/museum_photos/home/3.jpeg"),
+    image: encodePath("/museum_photos/home/3_2.jpeg"),
   },
   {
-    badge: "Hiện vật lịch sử",
-    title: "CHỨNG TÍCH\nTHỜI GIAN",
+    badge: "Bảo tàng Phòng không - Không quân",
+    title: "VÙNG TRỜI\nKÝ ỨC",
     description:
-      "Mỗi hiện vật là một câu chuyện, mỗi câu chuyện là một bài học về lòng yêu nước.",
+      "Tái hiện những câu chuyện, hiện vật và ký ức của lực lượng Phòng không - Không quân Việt Nam trên hành trình bảo vệ Tổ Quốc",
     cta: "KHÁM PHÁ",
-    image: encodePath("/museum_photos/home/4.jpeg"),
+    image: encodePath("/museum_photos/home/4_2.jpeg"),
   },
 ];
 

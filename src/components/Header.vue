@@ -21,7 +21,9 @@
             >Khám phá</router-link
           >
           <div class="dropdown-menu" v-show="exploreOpen">
-            <router-link to="/kham-pha/hien-vat">Hiện vật</router-link>
+            <router-link to="/kham-pha/hien-vat"
+              >Dòng chảy hiện vật</router-link
+            >
             <router-link to="/kham-pha/ky-uc">Ký ức lịch sử</router-link>
           </div>
         </div>

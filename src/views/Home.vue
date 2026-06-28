@@ -10,7 +10,7 @@
         <div class="quick-card" v-slide-in:bottom="{ delay: 0 }">
           <div class="icon">📖</div>
           <h4>Khám phá</h4>
-          <p>Dòng chảy hiện vật &amp; ký ức lịch sử</p>
+          <p>Dòng chảy hiện vật &amp; Ký ức lịch sử</p>
           <router-link to="/kham-pha" class="btn-outline">Xem ngay</router-link>
         </div>
         <div class="quick-card" v-slide-in:bottom="{ delay: 100 }">

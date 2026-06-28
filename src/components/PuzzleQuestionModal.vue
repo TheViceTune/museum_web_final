@@ -102,14 +102,17 @@
 
 <script setup>
 import { computed, ref, watch } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const props = defineProps({
   visible: Boolean,
   board: Number,
-  questions: Array, // array of question objects with q, options, correct, explain, link
+  questions: Array,
   currentIndex: Number,
-  answered: Array, // array of booleans
-  reviewMode: Boolean, // if true, disable selection and show answers
+  answered: Array,
+  reviewMode: Boolean,
 });
 
 const emit = defineEmits([
@@ -166,39 +169,30 @@ function selectOption(idx) {
     );
     feedbackMessage.value = `❌ Chưa chính xác! Đáp án đúng là: ${correctLetter}. ${currentQuestion.value.options[currentQuestion.value.correct]}`;
   }
-  // Emit answer event
   emit("answer", props.currentIndex, idx);
-  // Mark answered
   const newAnswered = [...props.answered];
   newAnswered[props.currentIndex] = true;
-  // We'll let parent handle the update via event
-  // Actually we need to update parent state, so we emit an event to update answered.
-  // We'll emit a custom event to update answered array.
   emit("update:answered", newAnswered);
 }
 
 function continueGame() {
   if (allAnswered.value) {
-    // All questions answered, close modal and reveal photo
     emit("complete");
     emit("update:visible", false);
     emit("close");
     return;
   }
-  // Find next unanswered
   const nextIdx = props.answered.findIndex(
     (a, i) => i > props.currentIndex && !a,
   );
   if (nextIdx !== -1) {
     emit("update:currentIndex", nextIdx);
   } else {
-    // If no next unanswered (should not happen if allAnswered false), find first unanswered
     const firstUnanswered = props.answered.findIndex((a) => !a);
     if (firstUnanswered !== -1) {
       emit("update:currentIndex", firstUnanswered);
     }
   }
-  // Reset selection state for new question
   selectedIdx.value = null;
   feedbackClass.value = "";
   feedbackMessage.value = "";
@@ -214,13 +208,27 @@ function navigateTo(idx) {
 
 function openLearnMore() {
   const link = currentQuestion.value.link;
-  if (link) {
-    if (link.startsWith("#")) {
-      window.location.hash = link.slice(1);
-    } else {
-      window.open(link, "_blank");
-    }
+  if (!link) return;
+
+  // Internal path (starts with '/') – use router.push
+  if (link.startsWith("/")) {
+    router.push(link);
+    // Close modal after navigation
+    emit("update:visible", false);
+    emit("close");
+    return;
   }
+
+  // Hash link (starts with '#') – use window.location
+  if (link.startsWith("#")) {
+    window.location.hash = link.slice(1);
+    emit("update:visible", false);
+    emit("close");
+    return;
+  }
+
+  // Otherwise, open as external link in new tab
+  window.open(link, "_blank");
 }
 
 function close() {
@@ -306,9 +314,6 @@ function close() {
 }
 .sidebar-item.answered {
   opacity: 0.8;
-}
-.sidebar-item.answered .question-number::after {
-  content: " ✅";
 }
 .sidebar-item .status-icon {
   font-size: 16px;

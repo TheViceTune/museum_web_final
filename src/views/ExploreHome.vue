@@ -74,7 +74,7 @@
   width: 100%;
   height: 100%;
   z-index: -1; /* Behind all content */
-  background-image: url("/museum_photos/Trang tham quan/Nền.png");
+  background-image: url("/museum_photos/nen kham pha.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

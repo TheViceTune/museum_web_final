@@ -1,17 +1,15 @@
 <template>
   <div class="artifact-display">
-    <div class="artifact-image-box">
-      <img
-        v-if="exhibit.image"
-        :src="exhibit.image"
-        :alt="exhibit.label"
-        class="artifact-image"
-        loading="lazy"
-        @error="handleImageError"
-      />
-      <div v-else class="icon-placeholder">{{ exhibit.icon }}</div>
-      <p class="image-note">{{ exhibit.imageNote }}</p>
-    </div>
+    <img
+      v-if="exhibit.image"
+      :src="exhibit.image"
+      :alt="exhibit.label"
+      class="artifact-image"
+      loading="lazy"
+      @error="handleImageError"
+    />
+    <div v-else class="icon-placeholder">{{ exhibit.icon }}</div>
+    <p class="image-note">{{ exhibit.imageNote }}</p>
   </div>
 </template>
 
@@ -25,28 +23,16 @@ function handleImageError(e) {
 
 <style scoped>
 .artifact-display {
-  background: var(--white);
+  background: var(--primary-dark);
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.artifact-image-box {
-  background: var(--cream);
-  border-radius: var(--radius);
-  padding: 20px;
-  text-align: center;
-  /* Removed border: 2px dashed var(--primary-light); */
-  min-height: 240px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
-  font-size: 14px;
+  color: var(--white);
 }
 .artifact-image {
   width: 100%;
@@ -62,7 +48,8 @@ function handleImageError(e) {
 }
 .image-note {
   font-size: 12px;
-  color: var(--text-light);
+  color: var(--white);
+  opacity: 0.8;
   margin-top: 4px;
 }
 </style>
