@@ -152,7 +152,6 @@ export const storyCards = [
       "Giữa biển nhiễu điện tử dày đặc, những người lính radar vẫn tìm thấy B-52 bằng trí tuệ và bản lĩnh...",
     image: "/museum_photos/stories/Bài 5/B5 - A1.png",
     fullStory: `
-      <p>Giữa biển nhiễu điện tử dày đặc, những người lính radar vẫn tìm thấy B-52 bằng trí tuệ và bản lĩnh.</p>
       <p>Nhiều năm sau chiến tranh, khi nhắc đến chiến thắng "Hà Nội - Điện Biên Phủ trên không", không ít người vẫn truyền tai nhau câu chuyện về việc bộ đội ta đã "nối tầng" tên lửa SAM-2 để bắn hạ những chiếc B-52 bất khả xâm phạm. Đó là một giai thoại hấp dẫn, nhưng sự thật còn đáng kinh ngạc hơn thế.</p>
       <p>Cuối năm 1972, khi phát động chiến dịch Linebacker II, quân đội Mỹ đặt trọn niềm tin vào sức mạnh của B-52. Những "pháo đài bay" khổng lồ này không chỉ mang theo lượng bom khủng khiếp mà còn được bảo vệ bởi mạng lưới gây nhiễu điện tử dày đặc. Kẻ địch cố tình biến bầu trời thành một "biển nhiễu", nơi việc phát hiện mục tiêu chẳng khác nào tìm một con thuyền nhỏ giữa cơn bão.</p>
       <div class="story-image-wrapper">
@@ -194,7 +193,6 @@ export const storyCards = [
       "Bay thấp để tránh radar, F-111 không ngờ lại gặp một đối thủ mà họ không tính tới...",
     image: "/museum_photos/stories/Bài 6/B6 - A1.png",
     fullStory: `
-      <p>Bay thấp để tránh radar, F-111 không ngờ lại gặp một đối thủ mà họ không tính tới.</p>
       <p>Trong ký ức của nhiều người về cuộc chiến tranh trên bầu trời miền Bắc, B-52 thường là cái tên được nhắc đến nhiều nhất. Thế nhưng, với không ít chiến sĩ phòng không thời bấy giờ, một đối thủ khác còn khiến họ đau đầu hơn: F-111 Aardvark.</p>
       <div class="story-image-wrapper">
       <img src="/museum_photos/stories/Bài 6/B6 - A1.png" alt="" />
@@ -237,7 +235,6 @@ export const storyCards = [
       "Sau mỗi chiến công MiG-21 là cả một mạng lưới dẫn đường âm thầm dưới mặt đất...",
     image: "/museum_photos/stories/Bài 7/B7 - A1.png",
     fullStory: `
-      <p>Sau mỗi chiến công MiG-21 là cả một mạng lưới dẫn đường âm thầm dưới mặt đất.</p>
       <p>Trong ký ức của nhiều người, chiến thắng "Hà Nội - Điện Biên Phủ trên không" thường gắn với những quả tên lửa SAM-2 vút lên giữa màn đêm, xé toang đội hình B-52. Nhưng ít ai biết rằng, trong những ngày tháng ác liệt ấy, còn có một lực lượng khác đang lặng lẽ tham gia cuộc săn tìm những "pháo đài bay". Đó là các phi công MiG-21.</p>
       <p>Không ít chuyên gia quân sự nước ngoài từng cho rằng việc dùng tiêm kích đánh chặn B-52 là nhiệm vụ gần như bất khả thi. Một bên là chiếc máy bay ném bom chiến lược khổng lồ được bảo vệ bởi hàng chục máy bay hộ tống, hệ thống gây nhiễu điện tử hiện đại và mạng lưới cảnh báo dày đặc. Một bên là những chiếc MiG-21 nhỏ bé với thời gian chiến đấu ngắn và lượng nhiên liệu hạn chế. Trên lý thuyết, cán cân dường như hoàn toàn nghiêng về phía Mỹ.</p>
       <p>Nhưng từ rất sớm, Bộ đội Không quân Việt Nam đã hiểu rằng, ta không cần đối đầu bằng sức mạnh mà có thể đối đầu bằng sự bất ngờ. Không đánh theo ý muốn của đối phương mà buộc đối phương phải chiến đấu theo cách mình lựa chọn. Đó chính là tư duy đã làm nên những trận đánh lịch sử trên bầu trời miền Bắc.</p>
