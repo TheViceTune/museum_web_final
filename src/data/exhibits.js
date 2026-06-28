@@ -9,7 +9,7 @@ export const exhibitsData = {
       icon: "🛩️",
       image: "/museum_photos/artifacts/1946 - 1965/37mm M1939.jpeg",
       label: "Pháo cao xạ 37mm M1939",
-      imageNote: "Ảnh: TTXVN",
+      imageNote: "Ảnh tư liệu",
       detail: `
         <h4>Thông tin khái quát</h4>
         <p>Pháo cao xạ 37mm do Liên Xô viện trợ cho Việt Nam trong kháng chiến chống thực dân Pháp. Trong chiến dịch Điện Biên Phủ, khẩu pháo biên chế về Khẩu đội 3, Đại đội 827, Tiểu đoàn 394, Trung đoàn 367.</p>
@@ -25,9 +25,9 @@ export const exhibitsData = {
       subtitle: "1946–1965 · “Pháo sắp thanh lý vẫn… bắn rơi máy bay Mỹ”",
       quote: "“Pháo sắp thanh lý vẫn… bắn rơi máy bay Mỹ”",
       icon: "🛩️",
-      image: "/museum_photos/artifacts/1946 - 1965/90mm.jpg",
+      image: "/museum_photos/artifacts/1946 - 1965/90mm.jpeg",
       label: "Pháo cao xạ 90mm",
-      imageNote: "Ảnh: Báo Vĩnh Long / Tạp chí Giáo dục Việt Nam",
+      imageNote: "Ảnh tư liệu",
       detail: `
         <h4>Thông tin khái quát</h4>
         <p>Pháo cao xạ 90mm là loại pháo phòng không tầm cao được trang bị cho Quân chủng Phòng không - Không quân đầu thập niên 1960. Hệ thống tác chiến gồm pháo 90mm kết hợp máy chỉ huy M7 và radar điều khiển hỏa lực SCR-584, có khả năng phát hiện, bám bắt và tiêu diệt mục tiêu trên không ở độ cao lớn.</p>
@@ -67,7 +67,7 @@ export const exhibitsData = {
       icon: "🚀",
       image: "/museum_photos/artifacts/1965 - 1975/sam2.jpg", // placeholder – add image later
       label: "Tên lửa SAM-2",
-      image: "/museum_photos/artifacts/1965 - 1975/sam-2.png",
+      image: "/museum_photos/artifacts/1965 - 1975/sam-2.JPG",
       imageNote: "Ảnh tư liệu",
       detail: `
         <h4>Thông tin khái quát</h4>
@@ -77,24 +77,6 @@ export const exhibitsData = {
         <h4>Câu chuyện tiêu biểu</h4>
         <p>Sau chiến thắng “Hà Nội - Điện Biên Phủ trên không” năm 1972, những tổ hợp tên lửa SAM-2 được mệnh danh là “Rồng lửa Thăng Long” - tiếp tục nhận một nhiệm vụ đặc biệt: hành quân vượt dãy Trường Sơn để tham gia chiến dịch giải phóng miền Nam. Hàng trăm cán bộ, chiến sĩ cùng các khí tài nặng hàng chục tấn đã vượt qua núi cao, đường hiểm và nhiều khó khăn về kỹ thuật để theo kịp bước tiến thần tốc của các binh đoàn chủ lực. Những ngày cuối tháng 4/1975, các đơn vị tên lửa đã có mặt tại cửa ngõ Sài Gòn, sẵn sàng bảo vệ đội hình tiến công trong Chiến dịch Hồ Chí Minh lịch sử. Dù không phải khai hỏa, sự hiện diện của “Rồng lửa Thăng Long” vẫn là minh chứng cho sức mạnh của quân đội Việt Nam và góp phần vào thắng lợi trọn vẹn của mùa Xuân năm 1975.</p>
         <p><small>Nguồn: <a href="https://nhandan.vn/sam-2-quat-do-phao-dai-bay-b-52-post564988.html" target="_blank">Nhân Dân</a> · <a href="https://nhandan.vn/dua-rong-lua-vuot-truong-son-vao-giai-phong-sai-gon-post877241.html" target="_blank">Nhân Dân</a></small></p>
-      `,
-    },
-    {
-      id: "mig21_4324",
-      title: "Máy bay MiG-21 số hiệu 4324",
-      subtitle: "1965–1975 · 14 ngôi sao đỏ",
-      quote:
-        "“Có những chiến công được ghi trong sử sách. Có những chiến công được khắc ghi trên thân máy bay bằng những ngôi sao đỏ.”",
-      icon: "✈️",
-      image: "/museum_photos/artifacts/1965 - 1975/4324.jpg", // placeholder – add image later
-      label: "MiG-21 số hiệu 4324",
-      imageNote: "Ảnh: VTC News / Báo Dân Trí",
-      detail: `
-        <h4>Thông tin khái quát</h4>
-        <p>Máy bay MiG-21 số hiệu 4324 là loại máy bay chiến đấu phản lực tiêm kích, 1 người lái, lắp động cơ phản lực P11-300, do Liên Xô (cũ) sản xuất 1965, viện trợ cho Việt Nam trong kháng chiến chống Mỹ cứu nước, được biên chế vào đội hình tiêm kích của Trung đoàn 921, Sư đoàn 371 Không quân từ tháng 1 năm 1967. Chiếc tiêm kích phản lực này gây ấn tượng mạnh với 14 ngôi sao đỏ rực trên thân, mỗi ngôi sao tượng trưng cho một lần bắn hạ máy bay địch.</p>
-        <h4>Lịch sử chiến đấu</h4>
-        <p>Trong cuộc kháng chiến chống Mỹ, MiG-21 số hiệu 4324 là một trong những chiếc máy bay lập nhiều chiến công xuất sắc nhất của Không quân nhân dân Việt Nam. Chỉ trong năm 1967, máy bay cùng các phi công đã cất cánh 69 lần, gặp địch 22 lần, nổ súng 16 lần và nhiều lần đối đầu với các loại máy bay hiện đại của không quân Mỹ. Kết thúc năm 1967, MiG-21 số hiệu 4324 đã bắn rơi 14 máy bay Mỹ, trong đó có các loại sừng sỏ như “Thần sấm” (F-105) “Con ma” (F-4)... Sau mỗi lần lập chiến công, các phi công đều được tặng thưởng huy hiệu Bác Hồ và máy bay được sơn một ngôi sao đỏ lên hai bên thân phía trước như một dấu ấn ghi nhận chiến thắng.</p>
-        <p><small>Nguồn: <a href="https://vnq.edu.vn/may-bay-mig-21-so-hieu-4324-va-ban-do-quyet-tam-chien-dich-ho-chi-minh-duoc-cong-nhan-la-bao-vat-quoc-gia-tin653" target="_blank">VNQ</a></small></p>
       `,
     },
     {

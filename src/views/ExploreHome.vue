@@ -17,7 +17,7 @@
           <div
             class="exp-card-bg"
             style="
-              background-image: url(&quot;/museum_photos/Bìa ảnh sections/Dòng chảy hiện vật.png&quot;);
+              background-image: url(&quot;/museum_photos/Bìa ảnh sections/Ký ức lịch sử.png&quot;);
             "
           ></div>
           <div class="exp-card-overlay"></div>
@@ -36,7 +36,7 @@
           <div
             class="exp-card-bg"
             style="
-              background-image: url(&quot;/museum_photos/Bìa ảnh sections/Ký ức lịch sử.png&quot;);
+              background-image: url(&quot;/museum_photos/Bìa ảnh sections/Dòng chảy hiện vật.png&quot;);
             "
           ></div>
           <div class="exp-card-overlay"></div>

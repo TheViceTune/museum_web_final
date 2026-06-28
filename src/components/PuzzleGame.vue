@@ -164,7 +164,7 @@ function resetGame() {
 
 // -------- IMAGE PATHS ----------
 const boardImages = {
-  1: encodeURI("/museum_photos/Quiz/Câu 1/Quiz Tên lửa SAM-2.png"),
+  1: encodeURI("/museum_photos/artifacts/1965 - 1975/sam-2.JPG"),
   2: encodeURI("/museum_photos/Quiz/Câu 2/Q2 - MIG-17.png"),
   3: encodeURI("/museum_photos/Quiz/Câu 3/Quiz 3 - MIG 21.png"),
   4: encodeURI("/museum_photos/artifacts/1965 - 1975/Radar P35.png"),

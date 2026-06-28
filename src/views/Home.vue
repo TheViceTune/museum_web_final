@@ -3,6 +3,15 @@
     <HomeHero v-slide-in:left />
 
     <div class="container">
+      <!-- Quote block -->
+      <div class="home-quote" v-slide-in:bottom="{ delay: 50 }">
+        <p class="quote-text">
+          “Những khối thép im lặng hôm nay chính là chứng tích của một bầu trời
+          từng rực lửa.<br />
+          Lịch sử không chỉ được lưu giữ, mà còn hiện diện như ký ức sống.”
+        </p>
+      </div>
+
       <VideoPlayer v-slide-in:bottom />
       <Disclaimer v-slide-in:bottom="{ delay: 150 }" />
 
@@ -72,5 +81,32 @@ import Disclaimer from "@/components/Disclaimer.vue";
   margin-top: 10px;
   padding: 6px 18px;
   font-size: 13px;
+}
+
+/* Quote block */
+.home-quote {
+  margin: 30px 0 20px;
+  padding: 16px 20px;
+  text-align: center;
+  border-left: 4px solid var(--gold);
+  border-right: 4px solid var(--gold);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius);
+}
+
+.quote-text {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--primary-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .quote-text {
+    font-size: 16px;
+  }
 }
 </style>
