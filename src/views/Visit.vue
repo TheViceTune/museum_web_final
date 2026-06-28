@@ -80,11 +80,11 @@
       <div class="contact-card" v-slide-in:bottom="{ delay: 400 }">
         <h3>📬 Thông tin liên hệ</h3>
         <div class="contact-grid">
-          <div>
-            <strong>Điện thoại quân sự:</strong> 069.562.323 · 069.562.322
-          </div>
+          <div><strong>SĐT:</strong> 069.562.323 · 069.562.322</div>
           <div><strong>Email:</strong> btpkkq171@gmail.com</div>
-          <div><strong>Facebook:</strong>Bảo tàng Phòng không - Không quân</div>
+          <div>
+            <strong>Facebook:</strong> Bảo tàng Phòng không - Không quân
+          </div>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(8px) brightness(0.7);
+  filter: blur(2px) brightness(0.9);
   transform: scale(1.05);
 }
 .page-overlay {

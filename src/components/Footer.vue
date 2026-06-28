@@ -55,7 +55,7 @@
   gap: 30px;
 }
 .footer-col h4 {
-  color: var(--gold);
+  color: #fada2d;
   margin-bottom: 12px;
   font-size: 16px;
 }

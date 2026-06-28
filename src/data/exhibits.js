@@ -149,7 +149,7 @@ export const exhibitsData = {
       label: "Khoang đổ bộ tàu Liên hợp 36",
       imageNote: "Ảnh tư liệu",
       detail: `
-        <h4>Thông số kỹ thuật</h4>
+        <h4>Thông tin khái quát</h4>
         <p>Khoang đổ bộ tàu Liên hợp 36 là hiện vật gắn liền với chương trình hợp tác vũ trụ Interkosmos giữa Việt Nam và Liên Xô. Khoang được chế tạo từ vật liệu chịu nhiệt đặc biệt, có khả năng chống lại nhiệt độ cực cao khi tái nhập khí quyển. Trong quá trình hạ cánh, dù chính có diện tích khoảng 1.000 m² được triển khai để giảm tốc độ rơi; khi còn cách mặt đất khoảng 1,5 m, hệ thống 4 động cơ hãm tự động kích hoạt, giúp giảm tốc độ tiếp đất xuống chỉ còn 3–5 m/s.</p>
         <h4>Lịch sử hoạt động</h4>
         <p>Ngày 23/7/1980, tàu Liên hợp 37 đưa nhà du hành vũ trụ Phạm Tuân và Viktor Gorbatko lên quỹ đạo, lắp ghép với trạm không gian Salyut 6. Trong thời gian làm việc trên quỹ đạo, hai nhà du hành đã tiến hành 30 thí nghiệm khoa học, quan sát và chụp ảnh Trái Đất. Sau khi hoàn thành nhiệm vụ, khoang đã đưa hai nhà du hành vũ trụ Phạm Tuân và Viktor Gorbatko trở về Trái Đất an toàn vào ngày 31/7/1980 sau chuyến bay lịch sử kéo dài 8 ngày, thực hiện 142 vòng quanh Trái Đất.</p>
@@ -168,7 +168,7 @@ export const exhibitsData = {
       label: "Trực thăng UH-1A số 027",
       imageNote: "Ảnh tư liệu",
       detail: `
-        <h4>Thông số kỹ thuật</h4>
+        <h4>Thông tin khái quát</h4>
         <p>UH-1A Iroquois (hay còn được biết đến với tên gọi Huey) là loại trực thăng đa nhiệm với tổ lái gồm 2 người. Máy bay UH-1 có kíp lái 1 - 4 người; dài 17,4 m; cao 4,39 m; trọng lượng rỗng 2.365 kg, có tải 4.100 kg, trọng lượng cất cánh tối đa 4.309 kg. Máy bay có tốc độ tối đa 217 km/h, tầm bay chuyển sân 507 km, trần bay 5.910 m, sức chứa 14 người.</p>
         <h4>Lịch sử hoạt động</h4>
         <p>Trong cuộc chiến tranh chống Mỹ ở Việt Nam, trực thăng UH-1 một thời đã đóng vai trò chủ lực trong chiến thuật “trực thăng vận” của Mỹ. Sau năm 1975, Quân đội Nhân dân Việt Nam tiếp nhận nhiều trực thăng UH-1 còn nguyên vẹn và đưa vào phục vụ nhiệm vụ bảo vệ Tổ quốc. Chiếc UH-1A số hiệu 027 thuộc Phi đội 1, Trung đoàn Không quân 917, tham gia nhiều nhiệm vụ quan trọng như bảo vệ biên giới Tây Nam, tuần tra biển đảo, truy quét Fulro tại Tây Nguyên, làm nhiệm vụ quốc tế tại Campuchia và phục vụ hoạt động dầu khí.</p>
@@ -188,7 +188,7 @@ export const exhibitsData = {
       label: "Trực thăng Ka-25 (số 7511)",
       imageNote: "Ảnh tư liệu",
       detail: `
-        <h4>Thông số kỹ thuật</h4>
+        <h4>Thông tin khái quát</h4>
         <p>Ka-25 (Hormone) là trực thăng săn ngầm chủ lực của Không quân Hải quân Việt Nam trong những năm 1980 - 1990. Máy bay đạt tốc độ tối đa khoảng 220 km/h, tầm hoạt động 400 km, được trang bị radar, sonar phát hiện tàu ngầm và có thể mang ngư lôi, bom chống ngầm với tải trọng vũ khí lên tới 1,9 tấn.</p>
         <h4>Lịch sử hoạt động</h4>
         <p>Ngày 13/1/1979, Không quân Hải quân Việt Nam được thành lập. Sáu trực thăng Ka-25 trở thành những phương tiện bay đầu tiên của lực lượng tuần tra biển Hải quân. Trong những năm 1980 - 1990, Ka-25 liên tục thực hiện các chuyến bay tuần tra, giám sát và bảo vệ chủ quyền trên biển Đông. Có thời điểm mỗi tuần thực hiện từ 8 - 10 chuyến bay trinh sát biển.</p>

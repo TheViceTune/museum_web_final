@@ -4,7 +4,7 @@ export const storyCards = [
     title: "Lời thề quyết tử bảo vệ bầu trời thủ đô",
     excerpt:
       'Bầu trời đêm Hà Nội cuối năm 1972 đặc quánh bóng tối và khét lẹt mùi bom đạn. Ở cao độ hàng nghìn mét, khi hai quả tên lửa phóng đi không đủ sức quật ngã "siêu pháo đài bay" B-52, một quyết định chớp nhoáng đã được đưa ra...',
-    image: "/museum_photos/stories/Bài 1/T1 - B1 - A1.png",
+    image: "/museum_photos/stories/Bài 1/T1 - B1 - A2.png",
     fullStory: `
       <p>Bầu trời đêm Hà Nội cuối năm 1972 đặc quánh bóng tối và khét lẹt mùi bom đạn. Ở cao độ hàng nghìn mét, khi hai quả tên lửa phóng đi không đủ sức quật ngã "siêu pháo đài bay" B-52, một quyết định chớp nhoáng đã được đưa ra.</p>
       <p>Ít ai ngờ, người phi công quả cảm ấy từng là một sinh viên Bách Khoa hào hoa của khu phố Đặng Dung (Hà Nội). Để được khoác lên mình bộ đồ bay, anh đã tự rèn luyện tiền đình bằng cách... trèo lên sân thượng quay vòng tròn mỗi chiều. Mang theo sự lãng mạn của tuổi trẻ, Thiều từng nửa đùa nửa thật xin đi đánh ban ngày, tính bắn rơi máy bay địch để lấy cái "đuôi" về tặng bạn gái. Nhưng khi nhận nhiệm vụ đánh đêm để diệt B-52, người thanh niên ấy đã đanh thép thốt lên lời thề định mệnh với người chỉ huy:</p>

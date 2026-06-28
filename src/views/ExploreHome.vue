@@ -78,7 +78,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(8px) brightness(0.7);
+  filter: blur(2px) brightness(1.1);
   transform: scale(1.05); /* hide blur edges */
 }
 
@@ -184,7 +184,7 @@
   line-height: 1.6;
 }
 .exp-card-content .btn-gold {
-  background: var(--gold);
+  background: #fada2d;
   color: var(--primary-dark);
   padding: 8px 24px;
   border-radius: 30px;
@@ -195,7 +195,7 @@
   display: inline-block;
 }
 .exp-card-content .btn-gold:hover {
-  background: var(--gold-light);
+  background: #fada2d;
 }
 
 /* Responsive */

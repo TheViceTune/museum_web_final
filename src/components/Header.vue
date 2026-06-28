@@ -135,9 +135,9 @@ function closeExperience() {
 }
 .main-nav a:hover,
 .main-nav a.router-link-active {
-  background: var(--gold);
+  background: #fada2d;
   color: var(--primary-dark);
-  border-color: var(--gold);
+  border-color: #fada2d;
 }
 
 .dropdown {

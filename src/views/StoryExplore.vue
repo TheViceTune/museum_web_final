@@ -77,7 +77,7 @@ function encodeImagePath(path) {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(8px) brightness(0.7);
+  filter: blur(2px) brightness(1.1);
   transform: scale(1.05);
 }
 

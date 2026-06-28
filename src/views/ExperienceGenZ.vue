@@ -44,10 +44,6 @@
             class="composite-image"
           />
         </div>
-        <div class="gallery-share">
-          <span>Chia sẻ thêm với chúng mình tại đây!</span>
-          <button class="btn-gold" @click="shareCheckin">📸 Chia sẻ ảnh</button>
-        </div>
       </div>
 
       <!-- Back button -->
@@ -132,7 +128,9 @@ const genzList = [
     school: "ĐH Ngoại Thương",
     quote:
       "“Đây là lần đầu tiên mình đi Bảo tàng, và ấn tượng lớn nhất đó chính là những khẩu pháo và phi cơ to khổng lồ, nhiều câu chuyện lịch sử về Phòng không - Không quân cũng khiến mình biết ơn hơn về những công ơn của những thế hệ đi trước.”",
-    photo: encodePath("/museum_photos/experience/thoughts/Trần Hà My.png"),
+    photo: encodePath(
+      "/museum_photos/experience/thoughts/Nguyễn Khánh Linh.png",
+    ),
   },
   {
     name: "Nguyễn Minh Nga",
@@ -145,7 +143,7 @@ const genzList = [
   {
     name: "Trần Hà My",
     age: 20,
-    school: "ĐH DAV",
+    school: "Học viện Ngoại giao",
     quote:
       "“Cảm giác bảo tàng làm khá tốt ở phần không gian, không bị ngột ngạt như mình từng nghĩ về bảo tàng quân sự.”",
     photo: "/museum_photos/experience/thoughts/tran-ha-my.png",
@@ -153,7 +151,7 @@ const genzList = [
   {
     name: "Trần Mai Hiên",
     age: 21,
-    school: "ĐH DAV",
+    school: "Học viện Ngoại giao",
     quote:
       "“Không nghĩ một bảo tàng quân sự ở Hà Nội lại cuốn vậy luôn. Đi xong cảm giác vừa chill vừa học được nhiều thứ.”",
     photo: encodePath("/museum_photos/experience/thoughts/Trần Mai Hiên.png"),
@@ -161,17 +159,17 @@ const genzList = [
   {
     name: "Lê Việt Anh",
     age: 21,
-    school: "ĐH DAV",
+    school: "Học viện Ngoại giao",
     quote:
       "“Có những khoảnh khắc đứng dưới máy bay thật sự thấy choáng ngợp. Tự nhiên hiểu hơn về một giai đoạn lịch sử.”",
     photo: encodePath("/museum_photos/experience/thoughts/Lê Việt Anh.png"),
   },
   {
     name: "Trịnh Gia Thanh Vân",
-    age: 20,
+    age: 21,
     school: "ĐH Quốc Gia Hà Nội",
     quote:
-      "“Mình thấy việc bảo tàng tổ chức các trò chơi tương tác rất hay, giúp giới trẻ tiếp cận lịch sử một cách nhẹ nhàng và dễ nhớ hơn.”",
+      "“Chuyến tham quan Bảo tàng Phòng không - Không quân đã giúp mình hiểu hơn về lịch sử hào hùng của dân tộc, từ đó thêm trân trọng sự hy sinh của các thế hệ đi trước và nâng cao ý thức trách nhiệm đối với Tổ quốc.”",
     photo: encodePath(
       "/museum_photos/experience/thoughts/trinh-gia-thanh-van.png",
     ),
@@ -225,7 +223,7 @@ function shareCheckin() {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(8px) brightness(0.7);
+  filter: blur(2px) brightness(1.1);
   transform: scale(1.05);
 }
 .page-overlay {

@@ -26,12 +26,12 @@ import Footer from "@/components/Footer.vue";
   padding: 0;
 }
 :root {
-  --primary: #195484;
+  --primary: #5184b6;
   --primary-dark: #0e3a5c;
-  --primary-light: #2a7ab0;
-  --gold: #c9a84c;
-  --gold-light: #e8d18c;
-  --cream: #f5f0e6;
+  --primary-light: #7cbbd8;
+  --gold: #fada2d;
+  --gold-light: #fada2d;
+  --cream: #e6eaed;
   --dark: #1e1e1e;
   --text: #2c2c2c;
   --text-light: #6b6b6b;
